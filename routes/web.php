@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\frontend\PagesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['prefix' => '/', 'as' => 'frontend.'], function() {
+    Route::get('/', [PagesController::class, 'home'])->name('home');
+    Route::get('about', [PagesController::class, 'about'])->name('about');
 });
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
