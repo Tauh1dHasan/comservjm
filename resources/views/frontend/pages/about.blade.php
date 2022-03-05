@@ -17,32 +17,13 @@
                         <div class="layout01__content">
                             <div class="layout01__content-wrapper">
                                 <div class="section-title text-left">
-                                    <div class="section-title__01">Over 25 Years Experience</div>
+                                    <div class="section-title__01">Experience</div>
                                     <div class="section-title__02">Experienced and Reliable Electrical Contractors</div>
                                 </div>
                                 <p>We are locally owned and operated which makes our services causal as they are done by friendly and helpful technicians.</p>
                                 <p>We started out in 2002. We are locally owned and operated which makes our services causal as they are done by friendly and helpful technicians. Our mission is to service each client with a highly trained and courteous technician
                                     that is dependable and always trustworthy.</p>
-                                <div class="tt-box04-wrapper row">
-                                    <div class="col-6">
-                                        <div class="tt-box04">
-                                            <div class="tt-box04__figure"><i class="icon-1716894"></i></div>
-                                            <div class="tt-box04__content">
-                                                <div class="tt-title">24</div>
-                                                <p>Skilled &amp; Certified Electricians</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="tt-box04">
-                                            <div class="tt-box04__figure"><i class="icon-1895474"></i></div>
-                                            <div class="tt-box04__content">
-                                                <div class="tt-title">10</div>
-                                                <p>Skilled &amp; Certified Electricians</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                
                             </div>
                         </div>
                     </div>
@@ -132,29 +113,7 @@
                     </div>
                 </div>
             </div>
-            <div class="section-indent">
-                <div class="tt-box01 js-init-bg" style="background-image: url('{{asset('images/box01-bg-desktop.jpg')}}')">
-                    <div class="container">
-                        <div class="tt-box01__holder">
-                            <div class="tt-box01__description">
-                                <h4 class="tt-box01__title">
-                                    Do you <span class="tt-base-color">Need Help</span>
-                                    <br>With Electrical<br>Maintenance?
-                                </h4>
-                                <p>Our electrical repair and service options are proudly offered to clients. Give us a call today to schedule a free service estimate!</p>
-                                <div class="tt-row-btn">
-                                    <a class="tt-btn btn__color01" href="tel:1(800)7654321">
-                                        <span class="icon-telephone"></span>Give Us a Call
-                                    </a> 
-                                    <a class="tt-btn btn__color02" data-toggle="modal" data-target="#modalMakeAppointment" href="#">
-                                        <span class="icon-lightning"></span>Free Estimate
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
             <div class="section-indent">
                 <div class="container container-lg-fluid">
                     <div class="section-title max-width-01">

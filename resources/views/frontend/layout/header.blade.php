@@ -127,7 +127,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="services.html">
+                                        <a href="{{route('frontend.services')}}">
                                             <div class="electric-btn"><span class="text">Services</span>
                                                 <div class="mask"><span>Services</span></div>
                                                 <div class="mask"><span>Services</span></div>
@@ -138,33 +138,17 @@
                                             </div>
                                         </a>
                                         <ul>
-                                            <li><a href="services-item.html">Services Item</a></li>
-                                            <li><a href="services-item.html">Sub menu level 01</a></li>
-                                            <li><a href="services-item.html">Sub menu level 01</a>
+                                            <li>
+                                                <a href="">Sub menu level 01</a>
                                                 <ul>
-                                                    <li><a href="services-item.html">Sub menu level 02</a></li>
-                                                    <li><a href="services-item.html">Sub menu level 02</a></li>
-                                                    <li><a href="services-item.html">Sub menu level 02</a>
-                                                        <ul>
-                                                            <li><a href="services-item.html">Sub menu level 03</a></li>
-                                                            <li><a href="services-item.html">Sub menu level 03</a></li>
-                                                            <li><a href="services-item.html">Sub menu level 03</a></li>
-                                                            <li><a href="services-item.html">Sub menu level 03</a></li>
-                                                            <li><a href="services-item.html">Sub menu level 03</a></li>
-                                                            <li><a href="services-item.html">Sub menu level 03</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="services-item.html">Sub menu level 02</a></li>
-                                                    <li><a href="services-item.html">Sub menu level 02</a></li>
+                                                    <li><a href="{{route('frontend.serviceItem')}}">Sub menu level 02</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="services-item.html">Sub menu level 01</a></li>
-                                            <li><a href="services-item.html">Sub menu level 01</a></li>
                                         </ul>
                                     </li>
                                     
                                     <li>
-                                        <a href="gallery.html">
+                                        <a href="{{route('frontend.gallery')}}">
                                             <div class="electric-btn"><span class="text">Gallery</span>
                                                 <div class="mask"><span>Gallery</span></div>
                                                 <div class="mask"><span>Gallery</span></div>
@@ -177,7 +161,7 @@
                                     </li>
                                     
                                     <li>
-                                        <a href="shop.html">
+                                        <a href="{{route('frontend.shop')}}">
                                             <div class="electric-btn"><span class="text">Shop</span>
                                                 <div class="mask"><span>Shop</span></div>
                                                 <div class="mask"><span>Shop</span></div>
@@ -187,12 +171,9 @@
                                                 <div class="mask"><span>Shop</span></div>
                                             </div>
                                         </a>
-                                        <ul>
-                                            <li><a href="shop-item.html">Shop Item</a></li>
-                                        </ul>
                                     </li>
                                     <li>
-                                        <a href="faq.html">
+                                        <a href="{{route('frontend.faq')}}">
                                             <div class="electric-btn"><span class="text">FAQ</span>
                                                 <div class="mask"><span>FAQ</span></div>
                                                 <div class="mask"><span>FAQ</span></div>
@@ -204,7 +185,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="contact.html">
+                                        <a href="{{route('frontend.contact')}}">
                                             <div class="electric-btn"><span class="text">Contacts</span>
                                                 <div class="mask"><span>Contacts</span></div>
                                                 <div class="mask"><span>Contacts</span></div>
@@ -221,8 +202,9 @@
                         </div>
                         <div class="tt-col-objects">
                             <div class="tt-col__item d-block d-lg-none">
-                                <div class="tt-obj tt-obj-cart js-dropdown-cart"><a href="#" class="tt-obj__btn"><i
-											class="icon-808584"></i>
+                                <div class="tt-obj tt-obj-cart js-dropdown-cart">
+                                    <a href="#" class="tt-obj__btn">
+                                        <i class="icon-808584"></i>
 										<div class="tt-obj__badge">2</div>
 									</a>
                                     <div class="tt-obj__dropdown"></div>

@@ -80,18 +80,6 @@
                                     <li>Emergency power solutions (generators)</li>
                                     <li>Virtually any electrical needs you have – just ask!</li>
                                 </ul>
-                                <div class="tt-data-info">
-                                    <div class="tt-item">
-                                        <div class="personal-box">
-                                            <div class="personal-box__img">
-                                                <img data-src="{{asset('images/img-02.jpg')}}" class="lazyload" alt="">
-                                            </div>
-                                            <div class="personal-box__content">
-                                                <div class="personal-box__title">Mark Smith</div>Your own electrician
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>

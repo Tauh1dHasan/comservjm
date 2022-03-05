@@ -20,4 +20,46 @@ class PagesController extends Controller
     {
         return view('frontend.pages.about');
     }
+
+    // Services page method
+    public function services()
+    {
+        return view('frontend.pages.services');
+    }
+
+    // Service-Item page method
+    public function serviceItem()
+    {
+        return view('frontend.pages.serviceItem');
+    }
+
+    // Gallery page method
+    public function gallery()
+    {
+        return view('frontend.pages.gallery');
+    }
+
+    // shop page method
+    public function shop()
+    {
+        return view('frontend.pages.shop');
+    }
+
+    // shopItem page method
+    public function shopItem()
+    {
+        return view('frontend.pages.shopItem');
+    }
+
+    // faq page method
+    public function faq()
+    {
+        return view('frontend.pages.faq');
+    }
+
+    // contact page method
+    public function contact()
+    {
+        return view('frontend.pages.contact');
+    }
 }

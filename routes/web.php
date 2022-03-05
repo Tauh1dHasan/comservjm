@@ -16,7 +16,14 @@ use App\Http\Controllers\frontend\PagesController;
 
 Route::group(['prefix' => '/', 'as' => 'frontend.'], function() {
     Route::get('/', [PagesController::class, 'home'])->name('home');
-    Route::get('about', [PagesController::class, 'about'])->name('about');
+    Route::get('aboutus', [PagesController::class, 'about'])->name('about');
+    Route::get('services', [PagesController::class, 'services'])->name('services');
+    Route::get('service-item', [PagesController::class, 'serviceItem'])->name('serviceItem');
+    Route::get('gallery', [PagesController::class, 'gallery'])->name('gallery');
+    Route::get('shop', [PagesController::class, 'shop'])->name('shop');
+    Route::get('shopItem', [PagesController::class, 'shopItem'])->name('shopItem');
+    Route::get('faq', [PagesController::class, 'faq'])->name('faq');
+    Route::get('contact', [PagesController::class, 'contact'])->name('contact');
 });
 
 Auth::routes();
