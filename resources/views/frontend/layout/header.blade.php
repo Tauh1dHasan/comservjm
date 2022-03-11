@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Electron - Responsive HTML5 Template</title>
+    <title>Comservjm</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">

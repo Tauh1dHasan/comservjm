@@ -51,7 +51,7 @@
             </div>
             <div id="map"></div>
             <div class="f-copyright row no-gutters">
-                <div class="col-sm-auto">&copy; 2020 Electrical Services. All Rights Reserved.</div>
+                <div class="col-sm-auto">&copy; Developed By <a href="https://github.com/Tauh1dHasan/" target="_blank"><span class="text-danger">Tauhid Hasan</span></a></div>
                 <div class="col-sm-auto ml-sm-auto">
                     <ul class="f-social">
                         <li>
