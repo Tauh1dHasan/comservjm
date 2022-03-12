@@ -8,35 +8,22 @@
                     </div>
                 </div>
                 <div id="js-mainSlider" class="mainSlider">
-                    <div class="slide">
-                        <div class="img--holder" data-bgslide="{{asset('images/mainslide-01.jpg')}}"></div>
-                        <div class="slide-content">
-                            <div class="container text-center js-rotation" data-animation="fadeInUpSm" data-animation-delay="0s">
-                                <div class="tt-title-01">Keeping You Wired</div>
-                                <div class="tt-title-02">We’re the Current<br>Specialist!</div>
+
+                    {{-- Main Slider loop --}}
+                    @foreach ($mainSliders as $mainSlider)
+                        <div class="slide">
+                            <div class="img--holder" data-bgslide="{{asset('images/mainSlider/' . $mainSlider->image)}}"></div>
+                            <div class="slide-content">
+                                <div class="container text-center js-rotation" data-animation="fadeInUpSm" data-animation-delay="0s">
+                                    <div class="tt-title-02">{{$mainSlider->title}}</div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="slide">
-                        <div class="img--holder" data-bgslide="{{asset('images/mainslide-02.jpg')}}"></div>
-                        <div class="slide-content">
-                            <div class="container text-center js-rotation" data-animation="fadeInUpSm" data-animation-delay="0s">
-                                <div class="tt-title-01">Making Our Clients Happier</div>
-                                <div class="tt-title-02">Best Services<br>for Your Family</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="slide">
-                        <div class="img--holder" data-bgslide="{{asset('images/mainslide-03.jpg')}}"></div>
-                        <div class="slide-content">
-                            <div class="container text-center js-rotation" data-animation="fadeInUpSm" data-animation-delay="0s">
-                                <div class="tt-title-01">We Can Light Everything</div>
-                                <div class="tt-title-02">Nothing is Impossible<br>for Us</div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
+                    
                 </div>
             </div>
+
             <div class="container order-form-wrapper container-lg-fluid container-lg__no-gutters">
                 <div class="order-form">
                     <div class="order-form__title" id="js-toggle-orderform"><i class="tt-arrow down"></i> Request Service Today
@@ -55,6 +42,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="section-indent">
                 <div class="container container-lg-fluid">
                     <div class="layout01 layout01__img-more">
@@ -62,9 +50,9 @@
                             <div class="tt-img-main">
                                 <img data-src="{{asset('images/layout01-img01.jpg')}}" class="lazyload" alt="">
                             </div>
-                            <div class="tt-img-more left-bottom">
+                            {{-- <div class="tt-img-more left-bottom">
                                 <img data-src="{{asset('images/layout01-img02.jpg')}}" class="lazyload" alt="">
-                            </div>
+                            </div> --}}
                         </div>
                         <div class="layout01__content">
                             <div class="layout01__content-wrapper">

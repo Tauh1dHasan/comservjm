@@ -4,6 +4,10 @@ namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+// Models
+use App\Models\HomeMainSlider;
+// Facades
+use File;
 
 class HomePageController extends Controller
 {
@@ -15,6 +19,57 @@ class HomePageController extends Controller
     public function index()
     {
         return view('backend.pages.dashboard');
+    }
+
+    // Show Home page main slider update page
+    public function mainSlider(){
+        
+        $sliders = HomeMainSlider::all();
+        
+        return view('backend.pages.home.mainSlider', compact('sliders'));
+    }
+
+    // Update Home page main slider
+    public function mainSliderUpdate(Request $request)
+    {   
+        if($request->mainSlider == NULL){
+            
+            $slider = HomeMainSlider::where('id', $request->id)->first();
+            $slider->title = $request->title;
+            $done = $slider->save();
+
+            if($done){
+                return redirect()->route('admin.home.mainSlider')->with('success', 'Slider Title Updated...!');
+            }else{
+                return redirect()->route('admin.home.mainSlider')->with('fail', 'Please try again...!');
+            }
+
+        }else{
+            
+            $slider = HomeMainSlider::where('id', $request->id)->first();
+
+            $oldImage = $slider->image;
+            File::delete(public_path('images/mainSlider/'.$oldImage));
+
+            $slider->title = $request->title;
+            $imageName = time().'.'.$request->mainSlider->extension();
+            $slider->image = $imageName;
+            $request->mainSlider->move(public_path('images/mainSlider/'), $imageName);
+            $done = $slider->save();
+
+            if($done){
+                return redirect()->route('admin.home.mainSlider')->with('success', 'Slider Updated...!');
+            }else{
+                return redirect()->route('admin.home.mainSlider')->with('fail', 'Please try again...!');
+            }
+
+        }
+    }
+
+    // Show home page aboutus update page
+    public function aboutus()
+    {
+        return view('backend.pages.home.aboutus');
     }
 
     /**

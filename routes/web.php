@@ -39,4 +39,13 @@ Route::group(['middleware' => ['auth'], 'prefix' => '/admin', 'as' => 'admin.'],
     
     Route::get('/dashboard', [HomePageController::class, 'index'])->name('dashboard');
 
+    Route::group(['prefix' => '/home', 'as' => 'home.'], function() {
+
+        Route::get('/main_slider', [HomePageController::class, 'mainSlider'])->name('mainSlider');
+        Route::post('/main_slider_update', [HomePageController::class, 'mainSliderUpdate'])->name('mainSliderUpdate');
+
+        Route::get('/aboutus', [HomePageController::class, 'aboutus'])->name('aboutus');
+
+    });
+
 });

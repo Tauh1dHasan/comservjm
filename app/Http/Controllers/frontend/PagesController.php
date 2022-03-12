@@ -4,6 +4,8 @@ namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+// Models
+use App\Models\HomeMainSlider;
 
 class PagesController extends Controller
 {
@@ -12,7 +14,9 @@ class PagesController extends Controller
     // Home page method
     public function home()
     {
-        return view('frontend.pages.home');
+        $mainSliders = HomeMainSlider::all();
+
+        return view('frontend.pages.home', compact('mainSliders'));
     }
 
     // AboutUs page method

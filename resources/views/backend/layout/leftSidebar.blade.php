@@ -20,13 +20,13 @@
                             </a>
                             <ul aria-expanded="false" class="collapse  first-level">
                                 <li class="sidebar-item">
-                                    <a href="index.html" class="sidebar-link">
+                                    <a href="{{route('admin.home.mainSlider')}}" class="sidebar-link">
                                         <i class="icon-Record"></i>
                                         <span class="hide-menu"> Slider </span>
                                     </a>
                                 </li>
                                 <li class="sidebar-item">
-                                    <a href="index2.html" class="sidebar-link">
+                                    <a href="{{route('admin.home.aboutus')}}" class="sidebar-link">
                                         <i class="icon-Record"></i>
                                         <span class="hide-menu"> About Us </span>
                                     </a>
