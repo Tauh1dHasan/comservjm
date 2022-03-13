@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 // Models
 use App\Models\HomeMainSlider;
+use App\Models\HomeAboutus;
 
 class PagesController extends Controller
 {
@@ -15,8 +16,9 @@ class PagesController extends Controller
     public function home()
     {
         $mainSliders = HomeMainSlider::all();
+        $aboutUs = HomeAboutus::where('id', 1)->first();
 
-        return view('frontend.pages.home', compact('mainSliders'));
+        return view('frontend.pages.home', compact('mainSliders', 'aboutUs'));
     }
 
     // AboutUs page method

@@ -48,7 +48,7 @@
                     <div class="layout01 layout01__img-more">
                         <div class="layout01__img">
                             <div class="tt-img-main">
-                                <img data-src="{{asset('images/layout01-img01.jpg')}}" class="lazyload" alt="">
+                                <img data-src="{{asset('images/'.$aboutUs->image)}}" class="lazyload" alt="">
                             </div>
                             {{-- <div class="tt-img-more left-bottom">
                                 <img data-src="{{asset('images/layout01-img02.jpg')}}" class="lazyload" alt="">
@@ -58,16 +58,9 @@
                             <div class="layout01__content-wrapper">
                                 <div class="section-title text-left">
                                     <div class="section-title__01">About Us</div>
-                                    <div class="section-title__02">Outstanding Residential &amp; Commercial Services</div>
+                                    <div class="section-title__02">{{$aboutUs->title}}</div>
                                 </div>
-                                <p>All of our services are backed by our 100% satisfaction guarantee. Our electricians can install anything from new security lighting for your outdoors to a whole home generator that will keep your appliances working during a
-                                    power outage.</p>
-                                <ul class="tt-list01 tt-list-top">
-                                    <li>Full-service electrical layout, design</li>
-                                    <li>Wiring and installation/upgrades</li>
-                                    <li>Emergency power solutions (generators)</li>
-                                    <li>Virtually any electrical needs you have – just ask!</li>
-                                </ul>
+                                {!! $aboutUs->description !!}
                             </div>
                         </div>
                     </div>

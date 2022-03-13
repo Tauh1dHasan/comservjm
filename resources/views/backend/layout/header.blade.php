@@ -17,6 +17,8 @@
     <link href="{{asset('backend/assets/libs/morris.js/morris.css')}}" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="{{asset('backend/dist/css/style.min.css')}}" rel="stylesheet">
+
+    <script src="{{asset('backend/dist/ckeditor/ckeditor.js')}}"></script>
 </head>
 
 <body>

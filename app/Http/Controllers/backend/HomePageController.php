@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 // Models
 use App\Models\HomeMainSlider;
+use App\Models\HomeAboutus;
 // Facades
 use File;
 
@@ -69,7 +70,44 @@ class HomePageController extends Controller
     // Show home page aboutus update page
     public function aboutus()
     {
-        return view('backend.pages.home.aboutus');
+        $aboutUs = HomeAboutus::where('id', 1)->first();
+        return view('backend.pages.home.aboutus', compact('aboutUs'));
+    }
+
+    // Home Page about us update
+    public function aboutusUpdate(Request $request)
+    {
+        if($request->image == NULL){
+            $aboutUs = HomeAboutus::where('id', 1)->first();
+            $aboutUs->title = $request->title;
+            $aboutUs->description = $request->description;
+            $done = $aboutUs->save();
+
+            if($done){
+                return redirect()->route('admin.home.aboutus')->with('success', 'Home page About us section udated...!');
+            }else{
+                return redirect()->route('admin.home.aboutus')->with('fail', 'Please try agrain...!');
+            }
+        }else{
+            $aboutUs = HomeAboutus::where('id', 1)->first();
+            $aboutUs->title = $request->title;
+            $aboutUs->description = $request->description;
+
+            $oldImage = $aboutUs->image;
+            File::delete(public_path('images/'.$oldImage));
+
+            $imageName = time().'.'.$request->image->extension();
+            $aboutUs->image = $imageName;
+            $request->image->move(public_path('images/'), $imageName);
+
+            $done = $aboutUs->save();
+
+            if($done){
+                return redirect()->route('admin.home.aboutus')->with('success', 'Home page About us section udated...!');
+            }else{
+                return redirect()->route('admin.home.aboutus')->with('fail', 'Please try agrain...!');
+            }
+        }
     }
 
     /**

@@ -42,7 +42,7 @@
                 
                 <div class="row">
                     <div class="col-12">
-                       <h4 class="d-inline">Home Page Main Slider</h4>
+                       <h4 class="text-center">Home Page Main Slider</h4>
                        <!-- Row -->
                        <div class="row" style="margin-top: 50px;">
                         @foreach ($sliders as $slider)

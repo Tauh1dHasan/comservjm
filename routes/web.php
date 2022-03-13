@@ -45,6 +45,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => '/admin', 'as' => 'admin.'],
         Route::post('/main_slider_update', [HomePageController::class, 'mainSliderUpdate'])->name('mainSliderUpdate');
 
         Route::get('/aboutus', [HomePageController::class, 'aboutus'])->name('aboutus');
+        Route::post('/aboutus_update', [HomePageController::class, 'aboutusUpdate'])->name('aboutusUpdate');
 
     });
 
