@@ -33,18 +33,16 @@ Auth::routes([
     'register' => false, // Register Routes...
 ]);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home'); //remove after logut system done
 
 Route::group(['middleware' => ['auth'], 'prefix' => '/admin', 'as' => 'admin.'], function() {
     
-    Route::get('/dashboard', [HomePageController::class, 'index'])->name('dashboard');
+    Route::get('/', [HomePageController::class, 'index'])->name('dashboard');
 
     Route::group(['prefix' => '/home', 'as' => 'home.'], function() {
 
-        Route::get('/main_slider', [HomePageController::class, 'mainSlider'])->name('mainSlider');
-        Route::post('/main_slider_update', [HomePageController::class, 'mainSliderUpdate'])->name('mainSliderUpdate');
+        Route::get('/', [HomePageController::class, 'homePage'])->name('homePage');
 
-        Route::get('/aboutus', [HomePageController::class, 'aboutus'])->name('aboutus');
+        Route::post('/main_slider_update', [HomePageController::class, 'mainSliderUpdate'])->name('mainSliderUpdate');
         Route::post('/aboutus_update', [HomePageController::class, 'aboutusUpdate'])->name('aboutusUpdate');
 
     });

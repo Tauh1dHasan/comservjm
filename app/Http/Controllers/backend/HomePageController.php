@@ -12,22 +12,19 @@ use File;
 
 class HomePageController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    // Show Dashboard (index)
     public function index()
     {
-        return view('backend.pages.dashboard');
+        return view('backend.dashboard');
     }
 
-    // Show Home page main slider update page
-    public function mainSlider(){
+    // Show Home page manager (Home-page index)
+    public function homePage(){
         
         $sliders = HomeMainSlider::all();
-        
-        return view('backend.pages.home.mainSlider', compact('sliders'));
+        $aboutUs = HomeAboutus::where('id', 1)->first();
+
+        return view('backend.pages.home', compact('sliders', 'aboutUs'));
     }
 
     // Update Home page main slider
@@ -40,9 +37,9 @@ class HomePageController extends Controller
             $done = $slider->save();
 
             if($done){
-                return redirect()->route('admin.home.mainSlider')->with('success', 'Slider Title Updated...!');
+                return redirect()->route('admin.home.homePage')->with('success', 'Slider Title Updated...!');
             }else{
-                return redirect()->route('admin.home.mainSlider')->with('fail', 'Please try again...!');
+                return redirect()->route('admin.home.homePage')->with('fail', 'Please try again...!');
             }
 
         }else{
@@ -59,22 +56,15 @@ class HomePageController extends Controller
             $done = $slider->save();
 
             if($done){
-                return redirect()->route('admin.home.mainSlider')->with('success', 'Slider Updated...!');
+                return redirect()->route('admin.home.homePage')->with('success', 'Slider Updated...!');
             }else{
-                return redirect()->route('admin.home.mainSlider')->with('fail', 'Please try again...!');
+                return redirect()->route('admin.home.homePage')->with('fail', 'Please try again...!');
             }
 
         }
     }
 
-    // Show home page aboutus update page
-    public function aboutus()
-    {
-        $aboutUs = HomeAboutus::where('id', 1)->first();
-        return view('backend.pages.home.aboutus', compact('aboutUs'));
-    }
 
-    // Home Page about us update
     public function aboutusUpdate(Request $request)
     {
         if($request->image == NULL){
@@ -84,9 +74,9 @@ class HomePageController extends Controller
             $done = $aboutUs->save();
 
             if($done){
-                return redirect()->route('admin.home.aboutus')->with('success', 'Home page About us section udated...!');
+                return redirect()->route('admin.home.homePage')->with('success', 'Home page About us section udated...!');
             }else{
-                return redirect()->route('admin.home.aboutus')->with('fail', 'Please try agrain...!');
+                return redirect()->route('admin.home.homePage')->with('fail', 'Please try agrain...!');
             }
         }else{
             $aboutUs = HomeAboutus::where('id', 1)->first();
@@ -103,76 +93,15 @@ class HomePageController extends Controller
             $done = $aboutUs->save();
 
             if($done){
-                return redirect()->route('admin.home.aboutus')->with('success', 'Home page About us section udated...!');
+                return redirect()->route('admin.home.homePage')->with('success', 'Home page About us section udated...!');
             }else{
-                return redirect()->route('admin.home.aboutus')->with('fail', 'Please try agrain...!');
+                return redirect()->route('admin.home.homePage')->with('fail', 'Please try agrain...!');
             }
         }
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+    
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

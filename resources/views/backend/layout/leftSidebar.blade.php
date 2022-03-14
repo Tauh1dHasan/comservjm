@@ -14,51 +14,11 @@
 
                         {{-- Home page --}}
                         <li class="sidebar-item">
-                            <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                            <a class="sidebar-link waves-effect waves-dark" href="{{route('admin.home.homePage')}}">
                                 <i class="icon-Home-4"></i>
                                 <span class="hide-menu">Home </span>
                             </a>
-                            <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item">
-                                    <a href="{{route('admin.home.mainSlider')}}" class="sidebar-link">
-                                        <i class="icon-Record"></i>
-                                        <span class="hide-menu"> Slider </span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="{{route('admin.home.aboutus')}}" class="sidebar-link">
-                                        <i class="icon-Record"></i>
-                                        <span class="hide-menu"> About Us </span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="index3.html" class="sidebar-link">
-                                        <i class="icon-Record"></i>
-                                        <span class="hide-menu"> Highlight </span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="index3.html" class="sidebar-link">
-                                        <i class="icon-Record"></i>
-                                        <span class="hide-menu"> Offer </span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="index3.html" class="sidebar-link">
-                                        <i class="icon-Record"></i>
-                                        <span class="hide-menu"> Project Gallery </span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="index3.html" class="sidebar-link">
-                                        <i class="icon-Record"></i>
-                                        <span class="hide-menu"> Statistics </span>
-                                    </a>
-                                </li>
-
-                            </ul>
                         </li>
-                        {{-- /Home page --}}
 
                         {{-- About Us page --}}
                         <li class="sidebar-item">
