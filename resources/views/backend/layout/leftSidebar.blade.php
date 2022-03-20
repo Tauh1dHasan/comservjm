@@ -7,10 +7,6 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
-                        <li class="nav-small-cap">
-                            <i class="mdi mdi-dots-horizontal"></i>
-                            <span class="hide-menu">Pages</span>
-                        </li>
 
                         {{-- Home page --}}
                         <li class="sidebar-item">
@@ -22,36 +18,10 @@
 
                         {{-- About Us page --}}
                         <li class="sidebar-item">
-                            <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                            <a class="sidebar-link waves-effect waves-dark" href="{{route('admin.aboutus.index')}}">
                                 <i class="icon-File-Fire"></i>
                                 <span class="hide-menu">About Us </span>
                             </a>
-                            <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item">
-                                    <a href="index.html" class="sidebar-link">
-                                        <i class="icon-Record"></i>
-                                        <span class="hide-menu"> Experience </span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="index2.html" class="sidebar-link">
-                                        <i class="icon-Record"></i>
-                                        <span class="hide-menu"> Certificate </span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="index3.html" class="sidebar-link">
-                                        <i class="icon-Record"></i>
-                                        <span class="hide-menu"> Advantages </span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="index3.html" class="sidebar-link">
-                                        <i class="icon-Record"></i>
-                                        <span class="hide-menu"> Our Team </span>
-                                    </a>
-                                </li>
-                            </ul>
                         </li>
                         {{-- /About Us page --}}
 
@@ -151,20 +121,6 @@
                             <a href="index.html" class="sidebar-link">
                                 <i class="icon-Inbox-Into"></i>
                                 <span class="hide-menu">All responses</span>
-                            </a>
-                        </li>
-                        {{-- /Visitor responses --}}
-
-                        <li class="nav-small-cap">
-                            <i class="mdi mdi-dots-horizontal"></i>
-                            <span class="hide-menu"></span>
-                        </li>
-
-                        {{-- Visitor responses --}}
-                        <li class="sidebar-item">
-                            <a href="index.html" class="sidebar-link">
-                                <i class="icon-Power-3"></i>
-                                <span class="hide-menu">Logout</span>
                             </a>
                         </li>
                         {{-- /Visitor responses --}}

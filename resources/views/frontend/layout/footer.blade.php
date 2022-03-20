@@ -8,10 +8,9 @@
                             <div class="col-xl-5">
                                 <div class="f-logo">
                                     <a href="index.html" class="f-logo">
-                                        <span class="tt-icon">
-                                            <img src="images/logo-dark.png" alt="">
+                                        <span>
+                                            <img width="200px" src="images/logo-dark.png" alt="">
                                         </span>
-                                        <span class="tt-text">Electron</span>
                                     </a>
                                     <!-- /logo -->
                                 </div>

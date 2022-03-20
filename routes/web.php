@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\frontend\PagesController;
 use App\Http\Controllers\backend\HomePageController;
+use App\Http\Controllers\backend\AboutusPageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,7 +45,22 @@ Route::group(['middleware' => ['auth'], 'prefix' => '/admin', 'as' => 'admin.'],
 
         Route::post('/main_slider_update', [HomePageController::class, 'mainSliderUpdate'])->name('mainSliderUpdate');
         Route::post('/aboutus_update', [HomePageController::class, 'aboutusUpdate'])->name('aboutusUpdate');
+        Route::post('/highlightUpdate', [HomePageController::class, 'highlightUpdate'])->name('highlightUpdate');
+        Route::post('/offerUpdate', [HomePageController::class, 'offerUpdate'])->name('offerUpdate');
+        Route::post('/statisticUpdate', [HomePageController::class, 'statisticUpdate'])->name('statisticUpdate');
+        Route::post('/addTestimonial', [HomePageController::class, 'addTestimonial'])->name('addTestimonial');
+        Route::get('/deleteTestimonial/{id}', [HomePageController::class, 'deleteTestimonial'])->name('deleteTestimonial');
 
+    });
+
+    Route::group(['prefix' => '/aboutus', 'as' => 'aboutus.'], function() {
+
+        Route::get('/', [AboutusPageController::class, 'index'])->name('index');
+
+        Route::post('/experienceUpdate', [AboutusPageController::class, 'experienceUpdate'])->name('experienceUpdate');
+        Route::post('/certificateUpdate', [AboutusPageController::class, 'certificateUpdate'])->name('certificateUpdate');
+        Route::post('/addTeam', [AboutusPageController::class, 'addTeam'])->name('addTeam');
+        Route::get('/delete-team/{id}', [AboutusPageController::class, 'deleteTeam'])->name('deleteTeam');
     });
 
 });

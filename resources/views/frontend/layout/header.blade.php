@@ -92,9 +92,9 @@
                         <div class="tt-col-logo">
                             <!-- logo -->
                             <a href="{{route('frontend.home')}}" class="tt-logo tt-logo-alignment">
-                                <span class="tt-icon">
-                                    <img src="{{asset('images/logo.png')}}" alt="">
-                                </span>ComSrv
+                                <span>
+                                    <img width="80px" src="{{asset('images/logo.png')}}" alt="">
+                                </span>
                             </a>
                             <!-- /logo -->
                         </div>
@@ -114,7 +114,7 @@
                                             </div>
                                         </a>
                                     </li>
-                                    <li>
+                                    <li class="active">
                                         <a href="{{route('frontend.about')}}">
                                             <div class="electric-btn"><span class="text">About Us</span>
                                                 <div class="mask"><span>About Us</span></div>

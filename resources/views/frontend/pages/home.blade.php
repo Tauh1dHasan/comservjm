@@ -68,49 +68,21 @@
             </div>
             <div class="section-indent">
                 <div class="tt-slideinfo-wrapper slick-type01">
-
-                    <div class="tt-slideinfo">
-                        <div class="tt-item__bg">
-                            <div data-bg="{{asset('images/slideinfo-01.jpg')}}" class="lazyload tt-item__bg-img"></div>
-                            <div class="tt-item__bg-top"></div>
-                        </div>
-                        <div class="tt-item__content">
-                            <div class="tt-item__title">
-                                <span class="tt-text">Commercial</span>
+                    @foreach ($highlights as $highlight)
+                        <div class="tt-slideinfo">
+                            <div class="tt-item__bg">
+                                <div data-bg="{{asset('images/' . $highlight->image)}}" class="lazyload tt-item__bg-img"></div>
+                                <div class="tt-item__bg-top"></div>
                             </div>
-                            <div class="tt-item__description">We offer the highest level of responsiveness and reliability, including on-line job management and reporting. Our highly experienced contractors across the nation ensure that your premises are always maintained and compliant.</div>
-                            <div class="tt-item__btn"><a href="#">+</a></div>
-                        </div>
-                    </div>
-
-                    <div class="tt-slideinfo">
-                        <div class="tt-item__bg">
-                            <div data-bg="{{asset('images/slideinfo-02.jpg')}}" class="lazyload tt-item__bg-img"></div>
-                            <div class="tt-item__bg-top"></div>
-                        </div>
-                        <div class="tt-item__content">
-                            <div class="tt-item__title">
-                                <span class="tt-text">Industrial</span>
+                            <div class="tt-item__content">
+                                <div class="tt-item__title">
+                                    <span class="tt-text">{{$highlight->title}}</span>
+                                </div>
+                                <div class="tt-item__description">{{$highlight->description}}</div>
+                                <div class="tt-item__btn"><a href="#">+</a></div>
                             </div>
-                            <div class="tt-item__description">We offer the highest level of responsiveness and reliability, including on-line job management and reporting. Our highly experienced contractors across the nation ensure that your premises are always maintained and compliant.</div>
-                            <div class="tt-item__btn"><a href="#">+</a></div>
                         </div>
-                    </div>
-
-                    <div class="tt-slideinfo">
-                        <div class="tt-item__bg">
-                            <div data-bg="{{asset('images/slideinfo-03.jpg')}}" class="lazyload tt-item__bg-img"></div>
-                            <div class="tt-item__bg-top"></div>
-                        </div>
-                        <div class="tt-item__content">
-                            <div class="tt-item__title">
-                                <span class="tt-text">Residential</span>
-                            </div>
-                            <div class="tt-item__description">We offer the highest level of responsiveness and reliability, including on-line job management and reporting. Our highly experienced contractors across the nation ensure that your premises are always maintained and compliant.</div>
-                            <div class="tt-item__btn"><a href="#">+</a></div>
-                        </div>
-                    </div>
-
+                    @endforeach
                 </div>
             </div>
             <div class="section-indent">
@@ -257,22 +229,17 @@
                 </div>
             </div>
             <div class="section-indent">
-                <div class="tt-box01 js-init-bg lazyload" data-bg="{{asset('images/box01-bg-desktop.jpg')}}">
+                <div class="tt-box01 js-init-bg lazyload" data-bg="{{asset('images/'.$offer->image)}}">
                     <div class="container">
                         <div class="tt-box01__holder">
                             <div class="tt-box01__description">
                                 <h4 class="tt-box01__title">
-                                    Do you <span class="tt-base-color">Need Help</span>
-                                    <br>With Electrical
-                                    <br>Maintenance?
+                                    {{$offer->title}}
                                 </h4>
-                                <p>Our electrical repair and service options are proudly offered to clients. Give us a call today to schedule a free service estimate!</p>
+                                {!! $offer->description !!}
                                 <div class="tt-row-btn">
-                                    <a class="tt-btn btn__color01" href="tel:1(800)7654321">
+                                    <a class="tt-btn btn__color01" href="tel:{{$offer->phone_number}}">
                                         <span class="icon-telephone"></span>Give Us a Call
-                                    </a>
-                                    <a class="tt-btn btn__color02" data-toggle="modal" data-target="#modalMakeAppointment" href="#">
-                                        <span class="icon-lightning"></span>Free Estimate
                                     </a>
                                 </div>
                             </div>
@@ -283,7 +250,7 @@
             <div class="section-indent">
                 <div class="container container-md-fluid">
                     <div class="section-title max-width-01">
-                        <div class="section-title__02">Our Projects</div>
+                        <div class="section-title__02">Latest Gallery</div>
                     </div>
                     <div id="filter-layout" class="row justify-content-center gallery-innerlayout-wrapper js-wrapper-gallery">
 
@@ -357,30 +324,31 @@
                     <div class="container container-md-fluid">
                         <div class="tt-info-value row">
                             <div class="tt-col-title col-md-4">
-                                <div class="tt-title"><img class="bg-marker lazyload" data-src="{{asset('images/bg_marker.png')}}" alt="">
+                                <div class="tt-title">
                                     <div class="tt-title__01">Our Statistics</div>
-                                    <div class="tt-title__02">Some Important Facts</div>
+                                    <div class="tt-title__02">{{$statistic->title}}</div>
                                 </div>
                             </div>
                             <div class="col-auto ml-auto">
                                 <div class="tt-item">
-                                    <div class="tt-value">5000+</div>Residential Projects
+                                    <div class="tt-value">{{$statistic->residential}}+</div>Residential Projects
                                 </div>
                             </div>
                             <div class="col-auto">
                                 <div class="tt-item">
-                                    <div class="tt-value">1500+</div>Commercial Projects
+                                    <div class="tt-value">{{$statistic->commercial}}+</div>Commercial Projects
                                 </div>
                             </div>
                             <div class="col-auto">
                                 <div class="tt-item">
-                                    <div class="tt-value">1000+</div>Industrial Projects
+                                    <div class="tt-value">{{$statistic->industrial}}+</div>Industrial Projects
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
             <div class="tt-box03 tt-box03__extraindent">
                 <div class="container container-md-fluid">
                     <div class="row no-gutters">
@@ -391,75 +359,31 @@
                                     "slidesToScroll": 1,
                                     "autoplaySpeed": 4500
                                 }'>
+                                @foreach ($testimonials as $testimonial)
                                     <div class="item">
                                         <div class="item__row">
                                             <div class="tt-item__img">
-                                                <img class="lazyload" data-src="{{asset('images/box03_img02.jpg')}}" alt="">
+                                                <img class="lazyload" data-src="{{asset('images/'.$testimonial->image)}}">
                                             </div>
                                             <div class="tt-item__title">
                                                 <div class="section-title text-left">
                                                     <div class="section-title__01">What Our Clients Say</div>
-                                                    <div class="section-title__02">Professional, Reliable & Cost Effective
-                                                    </div>
+                                                    <div class="section-title__02">{{$testimonial->title}}</div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="tt-item__content">
-                                            <blockquote>We've been using your company and from the very beginning found him and his team to be extremely professional and knowledgeable. We wouldn't have any hesitation in recommending their services. <cite>- Teresa and Kevin
-                                                    K.</cite></blockquote>
+                                            <blockquote>{{$testimonial->description}} 
+                                                <cite>- {{$testimonial->name}}</cite>
+                                            </blockquote>
                                         </div>
                                     </div>
-
-                                    <div class="item">
-                                        <div class="item__row">
-                                            <div class="tt-item__img">
-                                                <img class="lazyload" data-src="{{asset('images/box03_img02.jpg')}}" alt="">
-                                            </div>
-                                            <div class="tt-item__title">
-                                                <div class="section-title text-left">
-                                                    <div class="section-title__01">What Our Clients Say</div>
-                                                    <div class="section-title__02">Professional, Reliable & Cost Effective
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="tt-item__content">
-                                            <blockquote>We've been using your company and from the very beginning found him and his team to be extremely professional and knowledgeable. We wouldn't have any hesitation in recommending their services. <cite>- Teresa and Kevin
-                                                    K.</cite></blockquote>
-                                        </div>
-                                    </div>
-
-                                    <div class="item">
-                                        <div class="item__row">
-                                            <div class="tt-item__img">
-                                                <img class="lazyload" data-src="{{asset('images/box03_img02.jpg')}}" alt="">
-                                            </div>
-                                            <div class="tt-item__title">
-                                                <div class="section-title text-left">
-                                                    <div class="section-title__01">What Our Clients Say</div>
-                                                    <div class="section-title__02">Professional, Reliable & Cost Effective
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="tt-item__content">
-                                            <blockquote>We've been using your company and from the very beginning found him and his team to be extremely professional and knowledgeable. We wouldn't have any hesitation in recommending their services. <cite>- Teresa and Kevin
-                                                    K.</cite></blockquote>
-                                        </div>
-                                    </div>
-
+                                @endforeach
                                 </div>
                             </div>
-                            <div class="tt-box03__img tt-visible-mobile lazyload" data-bg="{{asset('images/box03_img01.jpg')}}"></div>
-                            <div class="tt-box03__extra">
-                                <div class="tt-title">Emergency Service</div>
-                                <p>If this is an emergency outside of normal business hours, call us</p>
-                                <address>
-                                    <a href="tel:1(800)7654321"><i class="icon-telephone"></i> 1 (800) 765-43-21</a>
-                                </address>
-                            </div>
+                            <div class="tt-box03__img tt-visible-mobile lazyload" data-bg="{{asset('images/'.$statistic->image)}}"></div>
                         </div>
-                        <div class="tt-box03__img tt-visible-desktop lazyload" data-bg="{{asset('images/box03_img01.jpg')}}"></div>
+                        <div class="tt-box03__img tt-visible-desktop lazyload" data-bg="{{asset('images/'.$statistic->image)}}"></div>
                     </div>
                 </div>
             </div>
