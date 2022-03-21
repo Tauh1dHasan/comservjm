@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\frontend\PagesController;
 use App\Http\Controllers\backend\HomePageController;
 use App\Http\Controllers\backend\AboutusPageController;
+use App\Http\Controllers\backend\GalleryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -61,6 +62,14 @@ Route::group(['middleware' => ['auth'], 'prefix' => '/admin', 'as' => 'admin.'],
         Route::post('/certificateUpdate', [AboutusPageController::class, 'certificateUpdate'])->name('certificateUpdate');
         Route::post('/addTeam', [AboutusPageController::class, 'addTeam'])->name('addTeam');
         Route::get('/delete-team/{id}', [AboutusPageController::class, 'deleteTeam'])->name('deleteTeam');
+    });
+
+    Route::group(['prefix' => '/gallery', 'as' => 'gallery.'], function() {
+        
+        Route::get('/', [GalleryController::class, 'index'])->name('index');
+
+        Route::post('/update', [GalleryController::class, 'update'])->name('update');
+        Route::post('/delete', [GalleryController::class, 'delete'])->name('delete');
     });
 
 });

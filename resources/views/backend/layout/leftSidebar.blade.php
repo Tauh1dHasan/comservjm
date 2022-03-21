@@ -50,18 +50,10 @@
 
                         {{-- Gallery page --}}
                         <li class="sidebar-item">
-                            <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                            <a class="sidebar-link waves-effect waves-dark" href="{{route('admin.gallery.index')}}">
                                 <i class="icon-File-Fire"></i>
                                 <span class="hide-menu">Gallery</span>
                             </a>
-                            <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item">
-                                    <a href="index.html" class="sidebar-link">
-                                        <i class="icon-Record"></i>
-                                        <span class="hide-menu">Gallery Images</span>
-                                    </a>
-                                </li>
-                            </ul>
                         </li>
                         {{-- /Gallery --}}
 

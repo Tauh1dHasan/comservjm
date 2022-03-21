@@ -16,6 +16,7 @@ use App\Models\HomeTestimonial;
 use App\Models\AboutusExperience;
 use App\Models\AboutusCertificate;
 use App\Models\Team;
+use App\Models\Gallery;
 
 class PagesController extends Controller
 {
@@ -63,7 +64,9 @@ class PagesController extends Controller
     // Gallery page method
     public function gallery()
     {
-        return view('frontend.pages.gallery');
+        $gallery = Gallery::where('id', 1)->first();
+        $images = Gallery::whereNotNull('image')->get();
+        return view('frontend.pages.gallery', compact('gallery', 'images'));
     }
 
     // shop page method
