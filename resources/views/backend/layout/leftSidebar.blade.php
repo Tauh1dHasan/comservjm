@@ -59,21 +59,21 @@
 
                         {{-- FAQ page --}}
                         <li class="sidebar-item">
-                            <a href="index.html" class="sidebar-link">
+                            <a href="{{route('admin.faq.index')}}" class="sidebar-link">
                                 <i class="icon-Record"></i>
                                 <span class="hide-menu">FAQ</span>
                             </a>
                         </li>
                         {{-- /FAQ page --}}
 
-                        {{-- Contacts page --}}
+                        {{-- Setting --}}
                         <li class="sidebar-item">
                             <a href="index.html" class="sidebar-link">
                                 <i class="icon-File-Fire"></i>
-                                <span class="hide-menu">Contacts</span>
+                                <span class="hide-menu">Setting</span>
                             </a>
                         </li>
-                        {{-- /Contacts --}}
+                        {{-- /Setting --}}
 
                         <li class="nav-small-cap">
                             <i class="mdi mdi-dots-horizontal"></i>
@@ -102,6 +102,29 @@
                             </ul>
                         </li>
                         {{-- /Shop --}}
+
+                        {{-- Invoice --}}
+                        <li class="sidebar-item">
+                            <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                                <i class="icon-Shop-2"></i>
+                                <span class="hide-menu">Invoice</span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item">
+                                    <a href="index.html" class="sidebar-link">
+                                        <i class="icon-Record"></i>
+                                        <span class="hide-menu">Create New</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="index.html" class="sidebar-link">
+                                        <i class="icon-Record"></i>
+                                        <span class="hide-menu">All Invoice</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        {{-- /Invoice --}}
 
                         <li class="nav-small-cap">
                             <i class="mdi mdi-dots-horizontal"></i>

@@ -17,6 +17,7 @@ use App\Models\AboutusExperience;
 use App\Models\AboutusCertificate;
 use App\Models\Team;
 use App\Models\Gallery;
+use App\Models\Faq;
 
 class PagesController extends Controller
 {
@@ -84,7 +85,9 @@ class PagesController extends Controller
     // faq page method
     public function faq()
     {
-        return view('frontend.pages.faq');
+        $firstFaqs = Faq::orderBy('id', 'asc')->take(4)->get();
+        $secondFaqs = Faq::orderBy('id', 'desc')->take(4)->get();
+        return view('frontend.pages.faq', compact('firstFaqs', 'secondFaqs'));
     }
 
     // contact page method

@@ -5,6 +5,7 @@ use App\Http\Controllers\frontend\PagesController;
 use App\Http\Controllers\backend\HomePageController;
 use App\Http\Controllers\backend\AboutusPageController;
 use App\Http\Controllers\backend\GalleryController;
+use App\Http\Controllers\backend\FaqController;
 
 /*
 |--------------------------------------------------------------------------
@@ -70,6 +71,15 @@ Route::group(['middleware' => ['auth'], 'prefix' => '/admin', 'as' => 'admin.'],
 
         Route::post('/update', [GalleryController::class, 'update'])->name('update');
         Route::post('/delete', [GalleryController::class, 'delete'])->name('delete');
+    });
+
+    Route::group(['prefix' => '/faq', 'as' => 'faq.'], function(){
+
+        Route::get('/', [FaqController::class, 'index'])->name('index');
+
+        Route::post('/add', [FaqController::class, 'add'])->name('add');
+        Route::get('/delete/{id}', [FaqController::class, 'delete'])->name('delete');
+
     });
 
 });
