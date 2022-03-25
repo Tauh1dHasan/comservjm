@@ -68,7 +68,7 @@
 
                         {{-- Setting --}}
                         <li class="sidebar-item">
-                            <a href="index.html" class="sidebar-link">
+                            <a href="{{route('admin.setting.index')}}" class="sidebar-link">
                                 <i class="icon-File-Fire"></i>
                                 <span class="hide-menu">Setting</span>
                             </a>

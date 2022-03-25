@@ -18,6 +18,7 @@ use App\Models\AboutusCertificate;
 use App\Models\Team;
 use App\Models\Gallery;
 use App\Models\Faq;
+use App\Models\Setting;
 
 class PagesController extends Controller
 {
@@ -87,12 +88,15 @@ class PagesController extends Controller
     {
         $firstFaqs = Faq::orderBy('id', 'asc')->take(4)->get();
         $secondFaqs = Faq::orderBy('id', 'desc')->take(4)->get();
+
         return view('frontend.pages.faq', compact('firstFaqs', 'secondFaqs'));
     }
 
     // contact page method
     public function contact()
     {
-        return view('frontend.pages.contact');
+        $setting = Setting::where('id', 1)->first();
+
+        return view('frontend.pages.contact', compact('setting'));
     }
 }

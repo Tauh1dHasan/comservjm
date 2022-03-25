@@ -5,6 +5,7 @@
         <div class="section-indent" style="margin-top: 0px;">
             <div class="container container-lg-fluid">
                 <div class="row">
+
                     <div class="col-md-4 col-lg-3 col-xl-3 leftColumn tt-aside" id="aside-js">
                         <div class="tt-block-aside tt-block-aside__shadow">
                             <h3 class="tt-aside-title">Categories</h3>
@@ -25,63 +26,12 @@
                                 </nav>
                             </div>
                         </div>
-                        <div class="tt-block-aside tt-block-aside__shadow">
-                            <h3 class="tt-aside-title">Search</h3>
-                            <div class="tt-aside-content">
-                                <form class="form-default">
-                                    <div class="tt-aside-search">
-                                        <input type="text" placeholder="Product search">
-                                        <a href="#" class="tt-btn-icon icon-search"></a>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        
-                        <div class="tt-block-aside tt-block-aside__shadow">
-                            <h3 class="tt-aside-title">Popular</h3>
-                            <div class="tt-aside-content">
-                                <div class="tt-popular">
-                                    <div class="tt-item">
-                                        <div class="tt-item__img">
-                                            <img src="{{asset('images/product/product-01.jpg')}}" alt="">
-                                        </div>
-                                        <div class="tt-item__layout">
-                                            <div class="tt-title">
-                                                <a href="#">Woods WiOn 15 amps Receptacle and USB Charger</a>
-                                            </div>
-                                            <div class="tt-value">
-                                                <a href="#" class="tt-icon-btn">
-                                                    <i class="icon-808584"></i>
-                                                </a>
-                                                <div class="tt-price">$41.99</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tt-item">
-                                        <div class="tt-item__img">
-                                            <img src="{{asset('images/product/product-02.jpg')}}" alt="">
-                                        </div>
-                                        <div class="tt-item__layout">
-                                            <div class="tt-title">
-                                                <a href="#">Powerboss 3500 watts Gasoline Portable Generator</a>
-                                            </div>
-                                            <div class="tt-value">
-                                                <a href="#" class="tt-icon-btn">
-                                                    <i class="icon-808584"></i>
-                                                </a>
-                                                <div class="tt-price">$329.99</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
+
                     <div class="col-md-12 col-lg-9 col-xl-9">
                         <div class="section-title text-left">
                             {{-- <div class="section-title__01">Best Quality Parts</div> --}}
-                            <div class="section-title__02">Electrical Products</div>
-                            <div class="section-title__03">We offer complete lines of Professional Manufacturer Lighting & Electrical products at Wholesale Prices. We make it our job to provide the best price and most gratifying shopping experience.</div>
+                            <div class="section-title__02">Featured Products</div>
                         </div>
                         
                         <div id="tt-product-listing" class="tt-product-listing row">

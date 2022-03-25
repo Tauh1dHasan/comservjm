@@ -9,7 +9,7 @@
                     <div>
                         <img src="{{asset('images/product/product-10.jpg')}}" alt="">
                     </div>
-                    <div>
+                    {{-- <div>
                         <img src="{{asset('images/product/product-10-02.jpg')}}" alt="">
                     </div>
                     <div>
@@ -20,7 +20,7 @@
                     </div>
                     <div>
                         <img src="{{asset('images/product/product-10-05.jpg')}}" alt="">
-                    </div>
+                    </div> --}}
                 </div>
             </div>
             <!-- /mobile product slider  -->
@@ -32,7 +32,7 @@
                                 <img class="zoom-product" src="{{asset('images/product/product-10.jpg')}}" data-zoom-image="{{asset('images/product/product-10.jpg')}}" alt="">
                             </div>
                         </div>
-                        <div class="product-images-carousel">
+                        {{-- <div class="product-images-carousel">
                             <ul id="smallGallery" class="arrow-location-02">
                                 <li>
                                     <a class="zoomGalleryActive" href="#" data-image="{{asset('images/product/product-10.jpg')}}" data-zoom-image="{{asset('images/product/product-10.jpg')}}">
@@ -60,12 +60,12 @@
                                     </a>
                                 </li>
                             </ul>
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="col-sm-7 col-lg-7">
                         <div class="product-single-info">
-                            <div class="tt-tag">Electrical Tape &amp; Tools</div>
-                            <h3 class="tt-title">Blackt Electrotech: 230 Volt Digital Programmable Timer Electronic Timer (24x7): Energy Saving Socket</h3>
+                            {{-- <div class="tt-tag">Electrical Tape &amp; Tools</div> --}}
+                            <h3 class="tt-title">Blackt Electrotech</h3>
                             
                             <div class="tt-price">$329.99</div>
                             
@@ -86,18 +86,6 @@
                     </ul>
                     <div class="tab-content">
                         <div class="tab-pane active fade" id="tt-tab-01" role="tabpanel">We offer complete lines of Professional Manufacturer Lighting & Electrical products at Wholesale Prices. We make it our job to provide the best price and most gratifying shopping experience.
-                            <ul class="tt-list01 tt-list-top">
-                                <li>1000 Watt / 10 Amps 240 V AC</li>
-                                <li>Min Setting time: 1 Min</li>
-                                <li>Operating Temperature: -10 to + 40 Deg C</li>
-                                <li>Accourancy: +/-1 Min per month</li>
-                                <li>24 hours / 7 days a week programmable</li>
-                                <li>Built-in battery for backup when power failure</li>
-                                <li>Repeat programs with 16 on/off settings, and setting on/off manually</li>
-                                <li>Battery Backup: Ni-Mh 1.2V 80mAH</li>
-                                <li>Current Cunsumption: 0.015MA</li>
-                                <li>Socket Type: Indian Standard</li>
-                            </ul>
                         </div>
                     </div>
                 </div>

@@ -32,7 +32,7 @@
                             <div class="layout01__content-wrapper">
                                 <div class="section-title text-left">
                                     <div class="section-title__01">Certificates</div>
-                                    <div class="section-title__02">{{$certificate->image}}</div>
+                                    <div class="section-title__02">{{$certificate->title}}</div>
                                 </div>
                                 {!! $certificate->description !!}
                                 <ul class="js-wrapper-gallery gallery01 gallery01-top">

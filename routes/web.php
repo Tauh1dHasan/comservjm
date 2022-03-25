@@ -6,6 +6,7 @@ use App\Http\Controllers\backend\HomePageController;
 use App\Http\Controllers\backend\AboutusPageController;
 use App\Http\Controllers\backend\GalleryController;
 use App\Http\Controllers\backend\FaqController;
+use App\Http\Controllers\backend\SettingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,7 +39,7 @@ Auth::routes([
 
 
 Route::group(['middleware' => ['auth'], 'prefix' => '/admin', 'as' => 'admin.'], function() {
-    
+
     Route::get('/', [HomePageController::class, 'index'])->name('dashboard');
 
     Route::group(['prefix' => '/home', 'as' => 'home.'], function() {
@@ -73,13 +74,25 @@ Route::group(['middleware' => ['auth'], 'prefix' => '/admin', 'as' => 'admin.'],
         Route::post('/delete', [GalleryController::class, 'delete'])->name('delete');
     });
 
-    Route::group(['prefix' => '/faq', 'as' => 'faq.'], function(){
+    Route::group(['prefix' => '/faq', 'as' => 'faq.'], function() {
 
         Route::get('/', [FaqController::class, 'index'])->name('index');
 
         Route::post('/add', [FaqController::class, 'add'])->name('add');
         Route::get('/delete/{id}', [FaqController::class, 'delete'])->name('delete');
 
+    });
+
+    Route::group(['prefix' => '/setting', 'as' => 'setting.'], function() {
+
+        Route::get('/', [SettingController::class, 'index'])->name('index');
+
+        Route::post('/update', [SettingController::class, 'update'])->name('update');
+    });
+
+    Route::group(['prefix' => '/shop', 'as' => 'shop.'], function() {
+
+        Route::get('/', [ShopController::class, 'index'])->name('index');
     });
 
 });

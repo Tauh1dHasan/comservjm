@@ -30,22 +30,19 @@
                 <div class="tt-item">
                     <div class="tt-item__icon"><span class="icon-map-marker"></span></div>
                     <div class="tt-item__text">
-                        <address>8494 Signal Hill Road Manassas, VA, 20110</address>
+                        <address>{{$setting->address}}</address>
                     </div>
-                </div>
-                <div class="tt-item">
-                    <div class="tt-item__icon"><span class="icon-482948"></span></div>
-                    <div class="tt-item__text"><a href="mailto:info@yourdomain.com">info@yourdomain.com</a></div>
                 </div>
                 <div class="tt-item">
                     <div class="tt-item__icon"><span class="icon-telephone"></span></div>
                     <div class="tt-item__text">
-                        <address><a href="tel:1(800)7654321">1 (800) 765-43-21</a></address>
+                        <address><a href="tel:1(800)7654321">{{$setting->phone1}}</a></address>
+                        <address><a href="tel:1(800)7654321">{{$setting->phone2}}</a></address>
                     </div>
                 </div>
                 <div class="tt-item">
                     <div class="tt-item__icon"><span class="icon-clock-circular-outline-1"></span></div>
-                    <div class="tt-item__text">Mon-Fri 08:00 AM - 05:00 PM, Sat-Sun</div>
+                    <div class="tt-item__text">{{$setting->workhours}}</div>
                 </div>
             </div><a href="#" class="h-topbox__btn" id="js-toggle-h-holder"><i class="tt-arrow down"></i></a>
         </div>
@@ -58,11 +55,11 @@
                         <div class="h-info01">
                             <div class="tt-item">
                                 <address>
-                                    <span class="icon-map-marker"></span>8494 Signal Hill Road Manassas, VA, 20110
+                                    <span class="icon-map-marker"></span>{{$setting->address}}
 								</address>
                             </div>
                             <div class="tt-item">
-                                <span class="icon-clock-circular-outline-1"></span>Mon-Fri 08:00 AM - 05:00 PM
+                                <span class="icon-clock-circular-outline-1"></span>{{$setting->workhours}}
                             </div>
                         </div>
                     </div>
@@ -72,7 +69,8 @@
                                 <div class="tt-item">
                                     <address>
                                         <a href="tel:1(800)7654321">
-                                            <span class="icon-telephone"></span>1 (800) 765-43-21
+                                            <span class="icon-telephone"></span>{{$setting->phone1}}
+                                            <span class="icon-telephone"></span>{{$setting->phone2}}
                                         </a>
                                     </address>
                                 </div>
@@ -93,7 +91,7 @@
                             <!-- logo -->
                             <a href="{{route('frontend.home')}}" class="tt-logo tt-logo-alignment">
                                 <span>
-                                    <img width="80px" src="{{asset('images/logo.png')}}" alt="">
+                                    <img width="280px" src="{{asset('images/logo.png')}}" alt="" style="float: left;">
                                 </span>
                             </a>
                             <!-- /logo -->

@@ -9,14 +9,14 @@
                                 <div class="f-logo">
                                     <a href="index.html" class="f-logo">
                                         <span>
-                                            <img width="200px" src="images/logo-dark.png" alt="">
+                                            <img width="200px" src="{{asset('images/logo-dark.png')}}" alt="">
                                         </span>
                                     </a>
                                     <!-- /logo -->
                                 </div>
                             </div>
                             <div class="col-xl-7">
-                                <div class="f-info-text">Our experienced electricians are highly trained in all aspects of electrical service, from office lighting and security systems to emergency repair.</div>
+                                <div class="f-info-text">{{$setting->footer_text}}</div>
                             </div>
                         </div>
                     </div>
@@ -24,38 +24,49 @@
                         <div class="col-sm-6 col-md-5">
                             <nav class="f-nav" id="f-nav">
                                 <ul>
-                                    <li><a href="#">Home</a></li>
-                                    <li><a href="#">Gallery</a></li>
-                                    <li><a href="#">About Us</a></li>
-                                    <li><a href="#">Shop</a></li>
-                                    <li><a href="#">Services</a></li>
-                                    <li><a href="#">FAQ</a></li>
-                                    <li><a href="#">Prices</a></li>
-                                    <li><a href="#">Contacts</a></li>
+                                    <li><a href="{{route('frontend.home')}}">Home</a></li>
+                                    <li><a href="{{route('frontend.gallery')}}">Gallery</a></li>
+                                    <li><a href="{{route('frontend.about')}}">About Us</a></li>
+                                    <li><a href="{{route('frontend.shop')}}">Shop</a></li>
+                                    <li><a href="{{route('frontend.services')}}">Services</a></li>
+                                    <li><a href="{{route('frontend.faq')}}">FAQ</a></li>
+                                    <li><a href="{{route('frontend.contact')}}">Contacts</a></li>
                                 </ul>
                             </nav>
                         </div>
                         <div class="col-sm-6 col-md-7">
                             <ul class="f-info-icon">
-                                <li><span class="icon-map-marker"></span> 8494 Signal Hill Road Manassas,<br>VA, 20110
+                                <li><span class="icon-map-marker"></span> {{$setting->address}}
                                 </li>
-                                <li><span class="icon-clock-circular-outline-1"></span> Mon-Fri 08:00 AM - 05:00 PM
+                                <li><span class="icon-clock-circular-outline-1"></span> {{$setting->workhours}}
                                 </li>
-                                <li><a href="tel:1(800)7654321"><span class="icon-telephone"></span> 1 (800)
-                                        765-43-21</a></li>
+                                <li>
+                                    <a href="tel:{{$setting->phone1}}">
+                                        <span class="icon-telephone"></span> {{$setting->phone1}}
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="tel:{{$setting->phone2}}">
+                                        <span class="icon-telephone"></span> {{$setting->phone2}}
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </div>
                 </div>
+                <div class="col-xl-4">
+                    <div class="map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25523.871526502386!2d-76.96638081559256!3d18.01841730918742!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8edb12e1cd3d06dd%3A0x7eb9355f26bcf0dd!2sSpanish%20Town%2C%20Jamaica!5e0!3m2!1sen!2sbd!4v1648227800456!5m2!1sen!2sbd" width="500" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
             </div>
-            <div id="map"></div>
+            {{-- <div id="map"></div> --}}
+            
+            
             <div class="f-copyright row no-gutters">
                 <div class="col-sm-auto">&copy; Developed By <a href="https://github.com/Tauh1dHasan/" target="_blank"><span class="text-danger">Tauhid Hasan</span></a></div>
                 <div class="col-sm-auto ml-sm-auto">
                     <ul class="f-social">
-                        <li>
-                            <a href="#" class="icon-twitter-logo-button"></a>
-                        </li>
                         <li>
                             <a href="#" class="icon-facebook-logo-button"></a>
                         </li>
