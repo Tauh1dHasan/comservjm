@@ -5,20 +5,19 @@ namespace App\Http\Controllers\frontend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 // Models
-// Home page
 use App\Models\HomeMainSlider;
 use App\Models\HomeAboutus;
 use App\Models\HomeHighlight;
 use App\Models\HomeOffer;
 use App\Models\HomeStatistic;
 use App\Models\HomeTestimonial;
-// Aboutus page
 use App\Models\AboutusExperience;
 use App\Models\AboutusCertificate;
 use App\Models\Team;
 use App\Models\Gallery;
 use App\Models\Faq;
 use App\Models\Setting;
+use App\Models\ShopCategory;
 
 class PagesController extends Controller
 {
@@ -74,7 +73,8 @@ class PagesController extends Controller
     // shop page method
     public function shop()
     {
-        return view('frontend.pages.shop');
+        $categories = ShopCategory::all();
+        return view('frontend.pages.shop', compact('categories'));
     }
 
     // shopItem page method

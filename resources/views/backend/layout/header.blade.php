@@ -55,7 +55,7 @@
                             <!-- Dark Logo icon -->
                             {{-- <img src="{{asset('backend/assets/images/logo-icon.png')}}'" alt="homepage" class="dark-logo" /> --}}
                             <!-- Light Logo icon -->
-                            <img src="{{asset('/images/logo.png')}}" alt="homepage" class="light-logo" style="max-width: 40px;"/>
+                            <img src="{{asset('/images/logo-dark.png')}}" alt="homepage" class="light-logo" style="max-width: 40px;"/>
                         </b>
                         <!--End Logo icon -->
                         

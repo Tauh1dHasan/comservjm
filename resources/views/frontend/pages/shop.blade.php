@@ -12,16 +12,9 @@
                             <div class="tt-aside-content">
                                 <nav class="nav-categories">
                                     <ul>
-                                        <li><a href="#">Generators</a></li>
-                                        <li><a href="#">Electronics</a></li>
-                                        <li><a href="#">Extension Cords</a></li>
-                                        <li><a href="#">Batteries &amp; Chargers</a></li>
-                                        <li><a href="#">Electrical Tape &amp; Tools</a></li>
-                                        <li><a href="#">Dimmers &amp; Receptacles</a></li>
-                                        <li><a href="#">Wall Plates</a></li>
-                                        <li><a href="#">Adapters &amp; Timers</a></li>
-                                        <li><a href="#">Door Chimes &amp; Buttons</a></li>
-                                        <li><a href="#">Plugs &amp; Connectors</a></li>
+                                        @foreach ($categories as $category)
+                                            <li><a href="#">{{$category->name}}</a></li> <!--  class="active"  -->
+                                        @endforeach
                                     </ul>
                                 </nav>
                             </div>

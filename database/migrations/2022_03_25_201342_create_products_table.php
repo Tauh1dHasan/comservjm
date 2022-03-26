@@ -18,6 +18,7 @@ return new class extends Migration
             $table->integer('shop_category_id');
             $table->string('name');
             $table->string('price')->nullable();
+            $table->string('fatorite')->nullable()->comment('1=trud, 0=false');
             $table->string('image')->nullable();
             $table->text('short_description')->nullable();
             $table->text('long_description')->nullable();

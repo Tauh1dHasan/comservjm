@@ -88,15 +88,15 @@
                             </a>
                             <ul aria-expanded="false" class="collapse  first-level">
                                 <li class="sidebar-item">
-                                    <a href="index.html" class="sidebar-link">
+                                    <a href="{{route('admin.shop.categories')}}" class="sidebar-link">
                                         <i class="icon-Record"></i>
                                         <span class="hide-menu">Categories</span>
                                     </a>
                                 </li>
                                 <li class="sidebar-item">
-                                    <a href="index.html" class="sidebar-link">
+                                    <a href="{{route('admin.shop.products')}}" class="sidebar-link">
                                         <i class="icon-Record"></i>
-                                        <span class="hide-menu">Items</span>
+                                        <span class="hide-menu">Products</span>
                                     </a>
                                 </li>
                             </ul>

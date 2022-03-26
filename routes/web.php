@@ -7,6 +7,8 @@ use App\Http\Controllers\backend\AboutusPageController;
 use App\Http\Controllers\backend\GalleryController;
 use App\Http\Controllers\backend\FaqController;
 use App\Http\Controllers\backend\SettingController;
+use App\Http\Controllers\backend\ShopController;
+use App\Http\Controllers\backend\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -92,7 +94,13 @@ Route::group(['middleware' => ['auth'], 'prefix' => '/admin', 'as' => 'admin.'],
 
     Route::group(['prefix' => '/shop', 'as' => 'shop.'], function() {
 
-        Route::get('/', [ShopController::class, 'index'])->name('index');
+        Route::get('/categories', [ShopController::class, 'categories'])->name('categories');
+        Route::post('/addCategory', [ShopController::class, 'addCategory'])->name('addCategory');
+        Route::get('/deleteCategory/{id}', [ShopController::class, 'deleteCategory'])->name('deleteCategory');
+
+        Route::get('/products', [ProductController::class, 'products'])->name('products');
+        Route::post('/addProduct', [ProductController::class, 'addProduct'])->name('addProduct');
+        Route::get('/deleteProduct/{id}', [ProductController::class, 'deleteProduct'])->name('deleteProduct');
     });
 
 });
