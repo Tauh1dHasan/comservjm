@@ -2,7 +2,7 @@
 
     @section('content')
         <main id="tt-pageContent">
-            <div class="section-indent" style="margin-top: 0px;"">
+            {{-- <div class="section-indent" style="margin-top: 0px;"">
                 <div class="container container-lg-fluid">
                     <div class="layout01 layout01__single-img">
                         <div class="layout01__bg-marker">
@@ -33,8 +33,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="section-indent">
+            </div> --}}
+            
                 <div class="container container-md-fluid">
                     <div class="section-title max-width-01">
                         <div class="section-title__02">What We Offer</div>
@@ -147,6 +147,6 @@
                         </a>
                     </div>
                 </div>
-            </div>
+
         </main>
     @endsection

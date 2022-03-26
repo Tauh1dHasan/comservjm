@@ -34,16 +34,13 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <h6 class="tt-layout-title tt-layout-title__top">Always Hire a Professionals</h6>
-                                    <p>No matter urgent any electrical repairs seem, it’s never okay to attempt to handle them on your own. Trying to take care of electrical problems without professional training is extremely dangerous. If you or someone else
-                                        aren’t hurt during your attempt, there’s still a chance that you’ve left something undone that poses a huge risk to you, your home, or your family. In fact, faulty electrical wiring is the number one cause of house
-                                        fires in the United States, according to the National Fire Protection Agency. So in order to make sure that your home is safe, always rely on a professional for any electrical services.</p>
+                                    
+                                    
                                     <blockquote class="blockquote02 blockquote02__top">
-                                        When searching for a reliable electrician, call us at 
+                                        When searching for a reliable source to design and develop your networking, call us at 
                                         <a href="tel:1(800)7654321">
                                             <span class="tt-base-color">1 (800) 765-43-21.</span>
-                                        </a> We specialize in electrical repairs, indoor and outdoor lighting installations,
-                                        panel upgrades, and even hot tub wiring!
+                                        </a> 
                                     </blockquote>
                                     <a href="#" data-toggle="modal" data-target="#modalMakeAppointment" class="tt-btn btn__color01 tt-btn-top">
                                         <span class="icon-lightning"></span>Get Service Now
@@ -115,18 +112,6 @@
                                         <li><i class="icon-clock-circular-outline-1"></i> Mon-Fri 08:00 AM - 05:00 PM</li>
                                         <li><a href="tel:1(800)7654321"><i class="icon-telephone"></i> 1 (800) 765-43-21</a></li>
                                     </ul><a href="#" data-toggle="modal" data-target="#modalMakeAppointment" class="tt-btn btn__color01"><span class="icon-lightning"></span>Make an Appointent</a></div>
-                            </div>
-                            <div class="tt-block-aside">
-                                <h3 class="tt-aside-title">Ask Your Question</h3>
-                                <div class="tt-aside-content">
-                                    <form id="questionform" class="form-default" method="post" novalidate="novalidate" action="#">
-                                        <div class="form-group"><input type="text" name="name" class="form-control" placeholder="Your Name *"></div>
-                                        <div class="form-group"><input type="text" name="email" class="form-control" placeholder="Your e-mail address *"></div>
-                                        <div class="form-group"><input type="text" name="phonenumber" class="form-control" placeholder="Your phone number"></div>
-                                        <div class="form-group"><textarea name="textarea" class="form-control" rows="4" placeholder="Your Qustion *"></textarea></div>
-                                        <div class="form-group"><button class="tt-btn btn__color01" type="submit"><span class="icon-lightning"></span>Ask your question</button></div>
-                                    </form>
-                                </div>
                             </div>
                         </div>
                     </div>

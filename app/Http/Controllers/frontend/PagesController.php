@@ -18,6 +18,7 @@ use App\Models\Gallery;
 use App\Models\Faq;
 use App\Models\Setting;
 use App\Models\ShopCategory;
+use App\Models\Product;
 
 class PagesController extends Controller
 {
@@ -74,13 +75,29 @@ class PagesController extends Controller
     public function shop()
     {
         $categories = ShopCategory::all();
-        return view('frontend.pages.shop', compact('categories'));
+        $products = Product::where('favorite', 1)->get();
+
+        return view('frontend.pages.shop', compact('categories', 'products'));
+    }
+
+    // Category wise page
+    public function shopCategory($id)
+    {
+        $categories = ShopCategory::all();
+        $categoryName = ShopCategory::where('id', $id)->first();
+        $products = Product::with('shopCategory')->where('shop_category_id', $id)->get();
+
+        return view('frontend.pages.shopCategory', compact('products', 'categories', 'categoryName'));
     }
 
     // shopItem page method
-    public function shopItem()
+    public function shopItem($id)
     {
-        return view('frontend.pages.shopItem');
+        $product = Product::where('id', $id)->first();
+        $category_id = Product::select('shop_category_id')->where('id', $id)->first();
+        $similars = Product::where('shop_category_id', $category_id)->get();
+
+        return view('frontend.pages.shopItem', compact('product', 'similars'));
     }
 
     // faq page method

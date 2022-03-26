@@ -9,6 +9,7 @@ use App\Http\Controllers\backend\FaqController;
 use App\Http\Controllers\backend\SettingController;
 use App\Http\Controllers\backend\ShopController;
 use App\Http\Controllers\backend\ProductController;
+use App\Http\Controllers\backend\ServiceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,7 +30,8 @@ Route::group(['prefix' => '/', 'as' => 'frontend.'], function() {
     Route::get('service-item', [PagesController::class, 'serviceItem'])->name('serviceItem');
     Route::get('gallery', [PagesController::class, 'gallery'])->name('gallery');
     Route::get('shop', [PagesController::class, 'shop'])->name('shop');
-    Route::get('shopItem', [PagesController::class, 'shopItem'])->name('shopItem');
+    Route::get('shopCategory/{id}', [PagesController::class, 'shopCategory'])->name('shopCategory');
+    Route::get('shopItem/{id}', [PagesController::class, 'shopItem'])->name('shopItem');
     Route::get('faq', [PagesController::class, 'faq'])->name('faq');
     Route::get('contact', [PagesController::class, 'contact'])->name('contact');
 
@@ -101,6 +103,13 @@ Route::group(['middleware' => ['auth'], 'prefix' => '/admin', 'as' => 'admin.'],
         Route::get('/products', [ProductController::class, 'products'])->name('products');
         Route::post('/addProduct', [ProductController::class, 'addProduct'])->name('addProduct');
         Route::get('/deleteProduct/{id}', [ProductController::class, 'deleteProduct'])->name('deleteProduct');
+    });
+
+    Route::group(['prefix' => '/service', 'as' => 'service.'], function() {
+
+        Route::get('/categories', [ServiceController::class, 'categories'])->name('categories');
+        Route::post('/addCategory', [ServiceController::class, 'addCategory'])->name('addCategory');
+        Route::post('/deleteCategory/{id}', [ServiceController::class, 'deleteCategory'])->name('deleteCategory');
     });
 
 });

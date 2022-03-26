@@ -24,7 +24,7 @@
                     <div class="col-md-12 col-lg-9 col-xl-9">
                         <div class="section-title text-left">
                             {{-- <div class="section-title__01">Best Quality Parts</div> --}}
-                            <div class="section-title__02">Featured Products</div>
+                            <div class="section-title__02">{{$categoryName->name}}</div>
                         </div>
                         
                         <div id="tt-product-listing" class="tt-product-listing row">

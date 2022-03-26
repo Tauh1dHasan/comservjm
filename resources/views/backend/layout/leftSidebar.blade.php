@@ -33,7 +33,7 @@
                             </a>
                             <ul aria-expanded="false" class="collapse  first-level">
                                 <li class="sidebar-item">
-                                    <a href="index.html" class="sidebar-link">
+                                    <a href="{{route('admin.service.categories')}}" class="sidebar-link">
                                         <i class="icon-Record"></i>
                                         <span class="hide-menu">Service Categories</span>
                                     </a>
@@ -103,29 +103,6 @@
                         </li>
                         {{-- /Shop --}}
 
-                        {{-- Invoice --}}
-                        <li class="sidebar-item">
-                            <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
-                                <i class="icon-Shop-2"></i>
-                                <span class="hide-menu">Invoice</span>
-                            </a>
-                            <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item">
-                                    <a href="index.html" class="sidebar-link">
-                                        <i class="icon-Record"></i>
-                                        <span class="hide-menu">Create New</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="index.html" class="sidebar-link">
-                                        <i class="icon-Record"></i>
-                                        <span class="hide-menu">All Invoice</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        {{-- /Invoice --}}
-
                         <li class="nav-small-cap">
                             <i class="mdi mdi-dots-horizontal"></i>
                             <span class="hide-menu">Visitor Response</span>
@@ -139,6 +116,12 @@
                             </a>
                         </li>
                         {{-- /Visitor responses --}}
+                        <li class="sidebar-item">
+                            <a href="index.html" class="sidebar-link">
+                                <i class="fa fa-user"></i>
+                                <span class="hide-menu">Profile</span>
+                            </a>
+                        </li>
                         
                     </ul>
                 </nav>

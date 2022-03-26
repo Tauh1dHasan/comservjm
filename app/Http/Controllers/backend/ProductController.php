@@ -14,7 +14,7 @@ class ProductController extends Controller
     public function products()
     {
         $categories = ShopCategory::all();
-        $products = Product::all();
+        $products = Product::with('shopCategory')->latest()->paginate(20);
         return view('backend.pages.products', compact('categories', 'products'));
     }
 
@@ -25,7 +25,12 @@ class ProductController extends Controller
         $product->shop_category_id = $request->shop_category_id;
         $product->name = $request->name;
         $product->price = $request->price;
-        $product->favorite = $request->favorite;
+        if($request->favorite)
+        {
+            $product->favorite = 1;
+        }else{
+            $product->favorite = 0;
+        }
         $product->short_description = $request->short_description;
         $product->long_description = $request->long_description;
         $imageName = time().'.'.$request->image->extension();
