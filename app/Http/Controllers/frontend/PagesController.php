@@ -33,9 +33,10 @@ class PagesController extends Controller
         $offer = HomeOffer::where('id', 1)->first();
         $statistic = HomeStatistic::where('id', 1)->first();
         $testimonials = HomeTestimonial::all();
+        $galleryImages = Gallery::orderBy('id', 'DESC')->take(10)->where('id', '!=', 1)->get();
 
         return view('frontend.pages.home', compact(
-            'mainSliders', 'aboutUs', 'highlights', 'offer', 'statistic', 'testimonials'
+            'mainSliders', 'aboutUs', 'highlights', 'offer', 'statistic', 'testimonials', 'galleryImages'
         ));
     }
 

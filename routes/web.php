@@ -106,6 +106,10 @@ Route::group(['middleware' => ['auth'], 'prefix' => '/admin', 'as' => 'admin.'],
     });
 
     Route::group(['prefix' => '/service', 'as' => 'service.'], function() {
+        Route::get('/', [ServiceController::class, 'index'])->name('index');
+        
+        Route::post('/addService', [ServiceController::class, 'addService'])->name('addService');
+        Route::get('/deleteService/{id}', [ServiceController::class, 'deleteService'])->name('deleteService');
 
         Route::get('/categories', [ServiceController::class, 'categories'])->name('categories');
         Route::post('/addCategory', [ServiceController::class, 'addCategory'])->name('addCategory');

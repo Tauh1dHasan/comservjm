@@ -10,7 +10,7 @@
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-5 align-self-center">
-                        <h4 class="page-title">Products</h4>
+                        <h4 class="page-title">Services</h4>
                         <div class="d-flex align-items-center">
 
                         </div>
@@ -22,7 +22,7 @@
                                     <li class="breadcrumb-item">
                                         <a href="{{route('admin.dashboard')}}">Dadhboard</a>
                                     </li>
-                                    <li class="breadcrumb-item active" aria-current="page">Products</li>
+                                    <li class="breadcrumb-item active" aria-current="page">Services</li>
                                 </ol>
                             </nav>
                         </div>
@@ -39,7 +39,7 @@
                 {{-- Alert --}}
                 @include('backend.layout.alert')
 
-                {{-- Products --}}
+                {{-- Services --}}
                 <div class="row">
                     <div class="col-12">
                         
@@ -47,13 +47,13 @@
                             <div class="col-lg-8 offset-lg-2 col-md-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h4 class="text-center">Add New Product</h4>
-                                        <form class="form-horizontal mt-4" action="{{route('admin.shop.addProduct')}}" method="POST" enctype="multipart/form-data">
+                                        <h4 class="text-center">Add New Service</h4>
+                                        <form class="form-horizontal mt-4" action="{{route('admin.service.addService')}}" method="POST" enctype="multipart/form-data">
                                             @csrf
     
                                             <div class="form-group">
-                                                <label for="name">Select Category</label>
-                                                <select name="shop_category_id" class="form-control" required>
+                                                <label for="service_category_id">Select Service Category</label>
+                                                <select name="service_category_id" class="form-control" required>
                                                     <option value="">--Select a category--</option>
                                                     @foreach ($categories as $category)
                                                         <option value="{{$category->id}}">{{$category->name}}</option>
@@ -62,32 +62,36 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="name">Product Name</label>
-                                                <input type="text" id="name" name="name" class="form-control" placeholder="Product Name" required>
+                                                <label for="name">Service Name</label>
+                                                <input type="text" id="name" name="name" class="form-control" placeholder="Service Name" required>
                                             </div>
                                             <div class="form-group">
-                                                <label for="price">Product Price</label>
-                                                <input type="text" id="price" name="price" class="form-control" placeholder="Product Price with symbol like $">
+                                                <label for="header_image">Service Page Header Image</label>
+                                                <input type="file" id="header_image" name="header_image" class="form-control" required>
                                             </div>
-                                            <div class="form-group">
-                                                <label for="price">Favorite</label>
-                                                <input type="checkbox" id="favorite" name="favorite"> [Check if you want it to display on shop page]
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="image">Product image</label>
-                                                <input type="file" id="image" name="image" class="form-control" required>
-                                            </div>
+                                            
                                             <div class="form-group">
                                                 <label for="short_description">Short description</label>
-                                                <textarea id="short_description" name="short_description" class="form-control" placeholder="Product Short Description" rows="5" required></textarea>
+                                                <textarea id="short_description" name="short_description" class="form-control" placeholder="Service Short Description" rows="5" required></textarea>
                                             </div>
                                             <div class="form-group">
                                                 <label for="long_description">Long description</label>
-                                                <textarea id="long_description" name="long_description" class="form-control" placeholder="Product Long Description" rows="8" required></textarea>
+                                                <textarea id="long_description" name="long_description" class="form-control" placeholder="Product Long Description" rows="12" required></textarea>
+                                                <script>
+                                                    CKEDITOR.replace('long_description');
+                                                </script>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="image1">Service image one</label>
+                                                <input type="file" id="image1" name="image1" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="image2">Service image two</label>
+                                                <input type="file" id="image2" name="image2" class="form-control">
                                             </div>
     
                                             <div class="form-group">
-                                                <input type="submit" class="form-control btn btn-primary" value="Add New Product">
+                                                <input type="submit" class="form-control btn btn-primary" value="Add New Service">
                                             </div>
 
                                         </form>
@@ -106,18 +110,17 @@
                             <div class="col-lg-8 offset-lg-2 col-md-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h4 class="text-center">List of Products</h4>
+                                        <h4 class="text-center">List of Services</h4>
                                     </div>
                                     <div class="table-responsive">
                                         <table class="table table-striped">
                                             <thead>
                                                 <tr>
                                                 <th scope="col">#</th>
-                                                <th scope="col">Image</th>
-                                                <th scope="col">Name</th>
-                                                <th scope="col">Category</th>
-                                                <th scope="col">Price</th>
-                                                <th scope="col">Favorite</th>
+                                                <th scope="col">Header Image</th>
+                                                <th scope="col">Service Name</th>
+                                                <th scope="col">Service Category</th>
+                                                <th scope="col">Short Description</th>
                                                 <th scope="col">Action</th>
                                                 </tr>
                                             </thead>
@@ -125,25 +128,18 @@
                                                 @php
                                                     $i = 1;
                                                 @endphp
-                                                @if (count($products) > 0)
-                                                    @foreach ($products as $product)
+                                                @if (count($services) > 0)
+                                                    @foreach ($services as $service)
                                                         <tr>
                                                             <th scope="row">{{$i}}</th>
                                                             <td>
-                                                                <img src="{{asset('images/product/'. $product->image)}}" width="80px">
+                                                                <img src="{{asset('images/service/'. $service->header_image)}}" width="80px">
                                                             </td>
-                                                            <td>{{$product->name}}</td>
-                                                            <td>{{$product->shopCategory->name}}</td>
-                                                            <td>{{$product->price ? $product->price : ''}}</td>
+                                                            <td>{{$service->name}}</td>
+                                                            <td>{{$service->serviceCategory->name}}</td>
+                                                            <td>{{$service->short_description}}</td>
                                                             <td>
-                                                                @if ($product->favorite == 1)
-                                                                    Yes
-                                                                @else
-                                                                    No
-                                                                @endif
-                                                            </td>
-                                                            <td>
-                                                                <a href="{{route('admin.shop.deleteCategory', $product->id)}}" class="btn btn-danger btn-sm">Delete</a>
+                                                                <a href="{{route('admin.service.deleteService', $service->id)}}" class="btn btn-danger btn-sm">Delete</a>
                                                             </td>
                                                         </tr>
                                                         @php
@@ -153,7 +149,7 @@
                                                 @else
                                                     <tr>
                                                         <td colspan="7" align="middle">
-                                                            No Product found
+                                                            No Service found
                                                         </td>
                                                     </tr>
                                                 @endif
@@ -161,7 +157,7 @@
                                                 
                                             </tbody>
                                         </table>
-                                        {!! $products->links() !!}
+                                        {!! $services->links() !!}
                                     </div>
                                 </div>
                             </div>

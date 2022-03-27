@@ -39,9 +39,9 @@
                                     </a>
                                 </li>
                                 <li class="sidebar-item">
-                                    <a href="index2.html" class="sidebar-link">
+                                    <a href="{{route('admin.service.index')}}" class="sidebar-link">
                                         <i class="icon-Record"></i>
-                                        <span class="hide-menu">Service Items</span>
+                                        <span class="hide-menu">Services</span>
                                     </a>
                                 </li>
                             </ul>
