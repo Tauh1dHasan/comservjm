@@ -27,7 +27,7 @@ Route::group(['prefix' => '/', 'as' => 'frontend.'], function() {
     Route::get('/', [PagesController::class, 'home'])->name('home');
     Route::get('aboutus', [PagesController::class, 'about'])->name('about');
     Route::get('services', [PagesController::class, 'services'])->name('services');
-    Route::get('service-item', [PagesController::class, 'serviceItem'])->name('serviceItem');
+    Route::get('service-item/{id}', [PagesController::class, 'serviceItem'])->name('serviceItem');
     Route::get('gallery', [PagesController::class, 'gallery'])->name('gallery');
     Route::get('shop', [PagesController::class, 'shop'])->name('shop');
     Route::get('shopCategory/{id}', [PagesController::class, 'shopCategory'])->name('shopCategory');

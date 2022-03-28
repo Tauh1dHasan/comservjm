@@ -8,21 +8,17 @@
                         <div class="col-12 col-md-8 col-lg-8">
                             <div class="services-item">
                                 <div class="services-item__img">
-                                    <img src="{{asset('images/services_img01.jpg')}}" alt="">
+                                    <img src="{{asset('images/service/'.$service->header_image)}}">
                                 </div>
                                 <div class="services-item__layout">
                                     <div class="tt-selected-block">
                                         <div class="section-title text-left">
-                                            <div class="section-title__01">Commercial Service</div>
-                                            <div class="section-title__02">Outdoor and Motion Lighting</div>
+                                            <div class="section-title__01">{{$service->allServices ? $service->allServices->name : ''}}</div>
+                                            <div class="section-title__02">{{$service->name}}</div>
                                         </div>
-                                        <blockquote class="blockquote01 blockquote01__max-width01">Electricity is arguably the most valuable resource we have in our modern society. Without electricity, most of the things we do and rely on on a daily basis wouldn’t be there.</blockquote>
+                                        <blockquote class="blockquote01 blockquote01__max-width01">{{$service->short_description}}</blockquote>
                                     </div>
-                                    <h4 class="tt-layout-title">Home Electrical Repair</h4>
-                                    <p>Electricity is arguably the most valuable resource we have in our modern society. Without electricity, most of the things we do and rely on on a daily basis wouldn’t be there. So while electricity is so ingrained into our
-                                        lives that we can take it for granted and hardly notice it’s there, if there’s an electrical problem, it can be difficult to notice anything else.</p>
-                                    <p>Our electrical repair technicians know what a hassle any electrical problems can be, which is why we’ll always respond to any requests for service as quickly as possible. And because all of our technicians are licensed,
-                                        background checked, and professionally trained, you’re guaranteed to receive the best quality service and workmanship available when you call us. We can assist with all your electric needs including:</p>
+                                    {!! $service->long_description !!}
                                     
                                     <div class="tt-col-img__top">
                                         <div class="row tt-col-img">

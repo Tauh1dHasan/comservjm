@@ -139,7 +139,7 @@
                                             <li>
                                                 <a href="">Sub menu level 01</a>
                                                 <ul>
-                                                    <li><a href="{{route('frontend.serviceItem')}}">Sub menu level 02</a></li>
+                                                    <li><a href="{{route('frontend.serviceItem',1)}}">Sub menu level 02</a></li>
                                                 </ul>
                                             </li>
                                         </ul>

@@ -19,6 +19,7 @@ use App\Models\Faq;
 use App\Models\Setting;
 use App\Models\ShopCategory;
 use App\Models\Product;
+use App\Models\Service;
 
 class PagesController extends Controller
 {
@@ -59,9 +60,12 @@ class PagesController extends Controller
     }
 
     // Service-Item page method
-    public function serviceItem()
+    public function serviceItem($id)
     {
-        return view('frontend.pages.serviceItem');
+        $allServices = Service::with('serviceCategory')->get();
+        $service = Service::with('serviceCategory')->where('id', $id)->first();
+
+        return view('frontend.pages.serviceItem', compact('allServices', 'service'));
     }
 
     // Gallery page method
