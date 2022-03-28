@@ -25,18 +25,18 @@ class ServiceController extends Controller
         $service->service_category_id = $request->service_category_id;
         $service->name = $request->name;
 
-        $header_image = time().'.'.$request->header_image->extension();
+        $header_image = time().".header_image.".$request->header_image->extension();
         $service->header_image = $header_image;
         $request->header_image->move(public_path('images/service/'), $header_image);
 
         $service->short_description = $request->short_description;
         $service->long_description = $request->long_description;
 
-        $image1 = time().'.'.$request->image1->extension();
+        $image1 = time().".image1.".$request->image1->extension();
         $service->image1 = $image1;
         $request->image1->move(public_path('images/service/'), $image1);
 
-        $image2 = time().'.'.$request->image2->extension();
+        $image2 = time().".image2.".$request->image2->extension();
         $service->image2 = $image2;
         $request->image2->move(public_path('images/service/'), $image2);
 
