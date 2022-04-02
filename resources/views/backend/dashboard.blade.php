@@ -38,131 +38,216 @@
                 <!-- ============================================================== -->
                 <!-- Info box -->
                 <!-- ============================================================== -->
-                <div class="card-group">
-                    <!-- Card -->
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="d-flex align-items-center">
-                                <div class="m-r-10">
-                                    <span class="btn btn-circle btn-lg bg-danger">
-                                        <i class="ti-clipboard text-white"></i>
-                                    </span>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="row" style="margin-top: 50px;">
+                            <div class="col-lg-8 offset-lg-2 col-md-12">
+                                <div class="card-body">
+                                    <h4 class="text-center">Pages</h4>
                                 </div>
-                                <div>
-                                    New projects
+                                <div class="card-group">
+                                    <!-- Card -->
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center">
+                                                <div class="m-r-10">
+                                                    <a href="{{route('admin.home.homePage')}}">
+                                                        <span class="btn btn-circle btn-lg bg-danger">
+                                                            <i class="ti-file text-white"></i>
+                                                        </span>
+                                                        <span style="font-size: 1.5em; font-weight: 500;">Home</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Card -->
+                                    <!-- Card -->
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center">
+                                                <div class="m-r-10">
+                                                    <a href="{{route('admin.aboutus.index')}}">
+                                                        <span class="btn btn-circle btn-lg bg-primary">
+                                                            <i class="ti-file text-white"></i>
+                                                        </span>
+                                                        <span style="font-size: 1.5em; font-weight: 500;">About Us</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Card -->
+                                    <!-- Card -->
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center">
+                                                <div class="m-r-10">
+                                                    <a href="{{route('admin.service.index')}}">
+                                                        <span class="btn btn-circle btn-lg bg-success">
+                                                            <i class="ti-file text-white"></i>
+                                                        </span>
+                                                        <span style="font-size: 1.5em; font-weight: 500;">Services</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Card -->
+                                    <!-- Card -->
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center">
+                                                <div class="m-r-10">
+                                                    <a href="{{route('admin.gallery.index')}}">
+                                                        <span class="btn btn-circle btn-lg bg-warning">
+                                                            <i class="ti-file text-white"></i>
+                                                        </span>
+                                                        <span style="font-size: 1.5em; font-weight: 500;">Gallery</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Card -->
+                                    <!-- Column -->
                                 </div>
-                                <div class="ml-auto">
-                                    <h2 class="m-b-0 font-light">23</h2>
+                                <div class="card-group">
+                                    <!-- Card -->
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center">
+                                                <div class="m-r-10">
+                                                    <a href="{{route('admin.faq.index')}}">
+                                                        <span class="btn btn-circle btn-lg bg-warning">
+                                                            <i class="ti-file text-white"></i>
+                                                        </span>
+                                                        <span style="font-size: 1.5em; font-weight: 500;">FAQ</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Card -->
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center">
+                                                <div class="m-r-10">
+                                                    <a href="{{route('admin.setting.index')}}">
+                                                        <span class="btn btn-circle btn-lg bg-danger">
+                                                            <i class="ti-file text-white"></i>
+                                                        </span>
+                                                        <span style="font-size: 1.5em; font-weight: 500;">Setting</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Card -->
+                                    <!-- Card -->
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center">
+                                                <div class="m-r-10">
+                                                    <a href="{{route('admin.setting.index')}}">
+                                                        <span class="btn btn-circle btn-lg bg-success">
+                                                            <i class="icon-Shop-2 text-white"></i>
+                                                        </span>
+                                                        <span style="font-size: 1.5em; font-weight: 500;">Shop</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Card -->
+                                    <!-- Card -->
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center">
+                                                <div class="m-r-10">
+                                                    <a href="{{route('admin.userResponse.index')}}">
+                                                        <span class="btn btn-circle btn-lg bg-primary">
+                                                            <i class="icon-Inbox-Into text-white"></i>
+                                                        </span>
+                                                        <span style="font-size: 1.5em; font-weight: 500;">User Responses</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Card -->
+                                    <!-- Column -->
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- Card -->
-                    <!-- Card -->
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="d-flex align-items-center">
-                                <div class="m-r-10">
-                                    <span class="btn btn-circle btn-lg btn-info">
-                                        <i class="ti-wallet text-white"></i>
-                                    </span>
-                                </div>
-                                <div>
-                                    Total Earnings
-
-                                </div>
-                                <div class="ml-auto">
-                                    <h2 class="m-b-0 font-light">113</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Card -->
-                    <!-- Card -->
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="d-flex align-items-center">
-                                <div class="m-r-10">
-                                    <span class="btn btn-circle btn-lg bg-success">
-                                        <i class="ti-shopping-cart text-white"></i>
-                                    </span>
-                                </div>
-                                <div>
-                                    Total Sales
-
-                                </div>
-                                <div class="ml-auto">
-                                    <h2 class="m-b-0 font-light">43</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Card -->
-                    <!-- Card -->
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="d-flex align-items-center">
-                                <div class="m-r-10">
-                                    <span class="btn btn-circle btn-lg bg-warning">
-                                        <i class="mdi mdi-currency-usd text-white"></i>
-                                    </span>
-                                </div>
-                                <div>
-                                    Profit
-
-                                </div>
-                                <div class="ml-auto">
-                                    <h2 class="m-b-0 font-light">63</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Card -->
-                    <!-- Column -->
                 </div>
+
 
                 <div class="row">
                     <div class="col-12">
-                        <div class="card">
-                           <div class="card-body">
-                              <h4 class="card-title">Striped rows</h4>
-                              <h6 class="card-subtitle">Use <code>.table-striped</code> to add zebra-striping to any table row within the <code>&lt;tbody&gt;</code>.</h6>
-                           </div>
-                           <div class="table-responsive">
-                              <table class="table table-striped">
-                                 <thead>
-                                    <tr>
-                                       <th scope="col">#</th>
-                                       <th scope="col">First</th>
-                                       <th scope="col">Last</th>
-                                       <th scope="col">Handle</th>
-                                    </tr>
-                                 </thead>
-                                 <tbody>
-                                    <tr>
-                                       <th scope="row">1</th>
-                                       <td>Mark</td>
-                                       <td>Otto</td>
-                                       <td>@mdo</td>
-                                    </tr>
-                                    <tr>
-                                       <th scope="row">2</th>
-                                       <td>Jacob</td>
-                                       <td>Thornton</td>
-                                       <td>@fat</td>
-                                    </tr>
-                                    <tr>
-                                       <th scope="row">3</th>
-                                       <td>Larry</td>
-                                       <td>the Bird</td>
-                                       <td>@twitter</td>
-                                    </tr>
-                                 </tbody>
-                              </table>
-                           </div>
+
+                        <div class="row" style="margin-top: 50px;">
+                            <div class="col-lg-8 offset-lg-2 col-md-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="text-center">Latest User Responses</h4>
+                                    </div>
+                                    <div class="table-responsive">
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col">Name</th>
+                                                <th scope="col">Email</th>
+                                                <th scope="col">Phone</th>
+                                                <th scope="col">Address</th>
+                                                <th scope="col">Request Date</th>
+                                                <th scope="col">Comment</th>
+                                                <th scope="col">Date</th>
+                                                <th scope="col">Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @php
+                                                    $i = 1;
+                                                @endphp
+                                                @if (count($responses) > 0)
+                                                    @foreach ($responses as $response)
+                                                        <tr>
+                                                            <th scope="row">{{$i}}</th>
+                                                            <td>{{$response->name ? $response->name : ''}}</td>
+                                                            <td>{{$response->email ? $response->email : ''}}</td>
+                                                            <td>{{$response->phone ? $response->phone : ''}}</td>
+                                                            <td>{{$response->address ? $response->address : ''}}</td>
+                                                            <td>{{$response->select_date ? $response->select_date : ''}}</td>
+                                                            <td>{{$response->comment ? $response->comment : ''}}</td>
+                                                            <td>{{date('d/M/y', strtotime($response->created_at)) }}</td>
+                                                            <td>
+                                                                <a href="{{route('admin.userResponse.delete', $response->id)}}" class="btn btn-danger btn-sm">Delete</a>
+                                                            </td>
+                                                        </tr>
+                                                        @php
+                                                            $i++;
+                                                        @endphp
+                                                    @endforeach
+                                                @else
+                                                    <tr>
+                                                        <td colspan="7" align="middle">
+                                                            No Response found
+                                                        </td>
+                                                    </tr>
+                                                @endif
+                                                
+                                                
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                     </div>
-                 </div>
+                    </div>
+                </div>
                 
                 
             </div>

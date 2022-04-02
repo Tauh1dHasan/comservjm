@@ -110,7 +110,7 @@
 
                         {{-- Visitor responses --}}
                         <li class="sidebar-item">
-                            <a href="index.html" class="sidebar-link">
+                            <a href="{{route('admin.userResponse.index')}}" class="sidebar-link">
                                 <i class="icon-Inbox-Into"></i>
                                 <span class="hide-menu">All responses</span>
                             </a>

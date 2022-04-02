@@ -42,24 +42,25 @@
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-md-8">
-                        <form id="questionform" class="form-default" method="post" novalidate="novalidate" action="#">
+                        <form id="questionform" class="form-default" method="post" novalidate="novalidate" action="{{route('admin.userResponse.store')}}">
+                            @csrf
                             <div class="form-group">
-                                <input type="text" name="name" class="form-control" placeholder="Your Name *">
+                                <input type="text" name="name" class="form-control" placeholder="Your Name *" required>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="text" name="email" class="form-control" placeholder="Your e-mail address *">
+                                        <input type="email" name="email" class="form-control" placeholder="Your e-mail address">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="text" name="phonenumber" class="form-control" placeholder="Your phone number">
+                                        <input type="text" name="phone" class="form-control" placeholder="Your phone number">
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <textarea name="textarea" class="form-control" rows="4" placeholder="Qustion In Detail *"></textarea>
+                                <textarea name="comment" class="form-control" rows="4" placeholder="Qustion In Detail *"></textarea>
                             </div>
                             <div class="form-group text-center">
                                 <button class="tt-btn btn__color01" type="submit">

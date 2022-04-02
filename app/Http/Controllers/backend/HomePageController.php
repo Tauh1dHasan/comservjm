@@ -11,6 +11,7 @@ use App\Models\HomeHighlight;
 use App\Models\HomeOffer;
 use App\Models\HomeStatistic;
 use App\Models\HomeTestimonial;
+use App\Models\UserResponse;
 // Facades
 use File;
 
@@ -19,7 +20,8 @@ class HomePageController extends Controller
     // Show Dashboard (index)
     public function index()
     {
-        return view('backend.dashboard');
+        $responses = UserResponse::orderBy('id', 'DESC')->take(10)->get();
+        return view('backend.dashboard', compact('responses'));
     }
 
     // Show Home page manager (Home-page index)

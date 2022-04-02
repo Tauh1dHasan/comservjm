@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 26, 2022 at 07:26 PM
+-- Generation Time: Apr 02, 2022 at 07:42 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -311,7 +311,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (16, '2022_03_25_164621_create_settings_table', 13),
 (17, '2022_03_25_195037_create_shop_categories_table', 14),
 (18, '2022_03_25_201342_create_products_table', 15),
-(19, '2022_03_26_155337_create_service_categories_table', 16);
+(19, '2022_03_26_155337_create_service_categories_table', 16),
+(20, '2022_03_26_172314_create_services_table', 17),
+(21, '2022_04_02_150346_create_user_responses_table', 18);
 
 -- --------------------------------------------------------
 
@@ -375,6 +377,34 @@ INSERT INTO `products` (`id`, `shop_category_id`, `name`, `price`, `favorite`, `
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `services`
+--
+
+CREATE TABLE `services` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `service_category_id` int(11) NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `header_image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `short_description` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `long_description` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image1` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image2` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `services`
+--
+
+INSERT INTO `services` (`id`, `service_category_id`, `name`, `header_image`, `short_description`, `long_description`, `image1`, `image2`, `created_at`, `updated_at`) VALUES
+(1, 1, 'Judith Hancock', '1648405285.jpg', 'Electricity is arguably the most valuable resource we have in our modern society. Without electricity, most of the things we do and rely on on a daily basis wouldn’t be there.', '<p>Home Electrical Repair</p>\r\n\r\n<p>Electricity is arguably the most valuable resource we have in our modern society. Without electricity, most of the things we do and rely on on a daily basis wouldn&rsquo;t be there. So while electricity is so ingrained into our lives that we can take it for granted and hardly notice it&rsquo;s there, if there&rsquo;s an electrical problem, it can be difficult to notice anything else.</p>\r\n\r\n<p>Our electrical repair technicians know what a hassle any electrical problems can be, which is why we&rsquo;ll always respond to any requests for service as quickly as possible. And because all of our technicians are licensed, background checked, and professionally trained, you&rsquo;re guaranteed to receive the best quality service and workmanship available when you call us. We can assist with all your electric needs including:</p>', '1648405285.jpg', '1648405285.jpg', '2022-03-27 12:21:25', '2022-03-27 12:21:25'),
+(2, 1, 'Outdoor and Motion Lighting', '1648485028.jpg', 'Electricity is arguably the most valuable resource we have in our modern society. Without electricity, most of the things we do and rely on on a daily basis wouldn’t be there.', '<h2>Home Electrical Repair</h2>\r\n\r\n<p>Electricity is arguably the most valuable resource we have in our modern society. Without electricity, most of the things we do and rely on on a daily basis wouldn&rsquo;t be there. So while electricity is so ingrained into our lives that we can take it for granted and hardly notice it&rsquo;s there, if there&rsquo;s an electrical problem, it can be difficult to notice anything else.</p>\r\n\r\n<p>Our electrical repair technicians know what a hassle any electrical problems can be, which is why we&rsquo;ll always respond to any requests for service as quickly as possible. And because all of our technicians are licensed, background checked, and professionally trained, you&rsquo;re guaranteed to receive the best quality service and workmanship available when you call us. We can assist with all your electric needs including:</p>', '1648485028.jpg', '1648485028.jpg', '2022-03-28 10:30:28', '2022-03-28 10:30:28'),
+(3, 2, 'Outdoor and Motion Lighting', '1648485103.jpg', 'Electricity is arguably the most valuable resource we have in our modern society. Without electricity, most of the things we do and rely on on a daily basis wouldn’t be there.', '<h1>Home Electrical Repair</h1>\r\n\r\n<p>Electricity is arguably the most valuable resource we have in our modern society. Without electricity, most of the things we do and rely on on a daily basis wouldn&rsquo;t be there. So while electricity is so ingrained into our lives that we can take it for granted and hardly notice it&rsquo;s there, if there&rsquo;s an electrical problem, it can be difficult to notice anything else.</p>\r\n\r\n<p>Our electrical repair technicians know what a hassle any electrical problems can be, which is why we&rsquo;ll always respond to any requests for service as quickly as possible. And because all of our technicians are licensed, background checked, and professionally trained, you&rsquo;re guaranteed to receive the best quality service and workmanship available when you call us. We can assist with all your electric needs including:</p>', '1648485103.jpg', '1648485103.jpg', '2022-03-28 10:31:43', '2022-03-28 10:31:43');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `service_categories`
 --
 
@@ -390,7 +420,8 @@ CREATE TABLE `service_categories` (
 --
 
 INSERT INTO `service_categories` (`id`, `name`, `created_at`, `updated_at`) VALUES
-(1, 'Main service', '2022-03-26 10:44:05', '2022-03-26 10:44:05');
+(1, 'Main service', '2022-03-26 10:44:05', '2022-03-26 10:44:05'),
+(2, 'Second Service', '2022-03-27 11:54:31', '2022-03-27 11:54:31');
 
 -- --------------------------------------------------------
 
@@ -488,7 +519,37 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Admin', 'admin@mail.com', NULL, '$2y$10$nD1lBJT4Vwo2obhjHpCDueBgm17s9G02CTYfbX7LrvKu36Lj81PH.', NULL, '2022-03-11 09:46:23', '2022-03-11 09:46:23');
+(1, 'Admin', 'admin@mail.com', NULL, '$2y$10$wYUhLviGFk2AP2NusTeR1eSEzOiUZ2kRgecIrGjCoRvS0wkFwmmK.', NULL, '2022-03-11 09:46:23', '2022-04-02 07:16:24');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_responses`
+--
+
+CREATE TABLE `user_responses` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `address` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `select_date` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `comment` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` int(5) DEFAULT NULL COMMENT '1=new, 0=old',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `user_responses`
+--
+
+INSERT INTO `user_responses` (`id`, `name`, `email`, `phone`, `address`, `select_date`, `comment`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'Student sample One', 'mail@mail.com', '0123456789', NULL, '04/04/2022', NULL, NULL, '2022-04-02 09:23:16', '2022-04-02 09:23:16'),
+(2, 'Tauhid Hasan', 'm.tah69@gmail.com', '01677163339', NULL, '04/13/2022', NULL, NULL, '2022-04-02 09:29:24', '2022-04-02 09:29:24'),
+(3, 'Softlooper', 'm.tah69@gmail.com', '01677163339', NULL, '04/13/2022', NULL, NULL, '2022-04-02 09:32:03', '2022-04-02 09:32:03'),
+(5, 'Student sample One', 'm.tah69@gmail.com', '0123456789', NULL, NULL, 'question', NULL, '2022-04-02 09:43:01', '2022-04-02 09:43:01'),
+(6, 'Tauhid Hasan', 'm.tah69@gmail.com', '01677163339', NULL, NULL, 'contact us', NULL, '2022-04-02 09:45:18', '2022-04-02 09:45:18');
 
 --
 -- Indexes for dumped tables
@@ -588,6 +649,12 @@ ALTER TABLE `products`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `services`
+--
+ALTER TABLE `services`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `service_categories`
 --
 ALTER TABLE `service_categories`
@@ -617,6 +684,12 @@ ALTER TABLE `teams`
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `users_email_unique` (`email`);
+
+--
+-- Indexes for table `user_responses`
+--
+ALTER TABLE `user_responses`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -692,7 +765,7 @@ ALTER TABLE `home_testimonials`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -707,10 +780,16 @@ ALTER TABLE `products`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT for table `services`
+--
+ALTER TABLE `services`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT for table `service_categories`
 --
 ALTER TABLE `service_categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `settings`
@@ -735,6 +814,12 @@ ALTER TABLE `teams`
 --
 ALTER TABLE `users`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `user_responses`
+--
+ALTER TABLE `user_responses`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

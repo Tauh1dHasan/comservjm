@@ -58,31 +58,32 @@
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-md-8">
-                        <form id="feedbackform" class="form-default" method="post" novalidate="novalidate" action="#">
+                        <form class="form-default" method="post" novalidate="novalidate" action="{{route('admin.userResponse.store')}}">
+                            @csrf
                             <div class="form-group">
-                                <input type="text" name="name" class="form-control" placeholder="Your Name *">
+                                <input type="text" name="name" class="form-control" placeholder="Your Name *" required>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="text" name="email" class="form-control" placeholder="Your e-mail address *">
+                                        <input type="email" name="email" class="form-control" placeholder="Your e-mail address *">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="text" name="phonenumber" class="form-control" placeholder="Your phone number">
+                                        <input type="text" name="phone" class="form-control" placeholder="Your phone number">
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <textarea name="message" class="form-control" rows="4" placeholder="Qustion In Detail *"></textarea>
+                                <textarea name="comment" class="form-control" rows="4" placeholder="Qustion In Detail *"></textarea>
                             </div>
                             <div class="form-group">
-                                <div class="tt-notes text-center">All Electrical work must be done by a qualified licensed electrician.</div>
+                                <div class="tt-notes text-center">All wiring work must be done by a qualified licensed electrician.</div>
                             </div>
                             <div class="form-group text-center">
                                 <button class="tt-btn btn__color01" type="submit">
-                                    <span class="icon-lightning"></span>Contact us
+                                    <span class="icon-lightning"></span>Submit
                                 </button>
                             </div>
                         </form>

@@ -7,6 +7,14 @@
                         <img src="{{asset('images/bolt.gif')}}" alt="">
                     </div>
                 </div>
+                @if (session('success'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{session('success')}}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                @endif
                 <div id="js-mainSlider" class="mainSlider">
 
                     {{-- Main Slider loop --}}
@@ -29,15 +37,27 @@
                     <div class="order-form__title" id="js-toggle-orderform"><i class="tt-arrow down"></i> Request Service Today
                     </div>
                     <div class="order-form__content form-order">
-                        <form id="orderform" method="post" novalidate="novalidate" action="#">
-                            <div class="form-group"><input type="text" name="name" class="form-control" placeholder="Your name"></div>
-                            <div class="form-group"><input type="text" name="email" class="form-control" placeholder="Your e-mail"></div>
-                            <div class="form-group"><input type="text" name="phonenumber" class="form-control" placeholder="Your phone"></div>
-                            <div class="form-group"><span class="icon icon-747993"></span> <input name="date" class="datepicker-1 form-control" autocomplete="off" placeholder="Date" type="text">
+                        <form id="orderform" method="post" novalidate="novalidate" action="{{route('admin.userResponse.store')}}">
+                            @csrf
+                            <div class="form-group">
+                                <input type="text" name="name" class="form-control" placeholder="Your name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" class="form-control" placeholder="Your e-mail">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="phone" class="form-control" placeholder="Your phone">
+                            </div>
+                            <div class="form-group">
+                                <span class="icon icon-747993"></span> 
+                                <input name="select_date" class="datepicker-1 form-control" autocomplete="off" placeholder="Date" type="text">
                                 <div class="form-group__icon icon-calendar"></div>
                             </div>
-                            <div class="form-group"><button class="tt-btn btn__color01" type="submit"><span
-                                        class="icon-lightning"></span>Get Service</button></div>
+                            <div class="form-group">
+                                <button class="tt-btn btn__color01" type="submit">
+                                    <span class="icon-lightning"></span>Submit
+                                </button>
+                            </div>
                         </form>
                     </div>
                 </div>

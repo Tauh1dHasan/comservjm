@@ -11,6 +11,7 @@ use App\Http\Controllers\backend\ShopController;
 use App\Http\Controllers\backend\ProductController;
 use App\Http\Controllers\backend\ServiceController;
 use App\Http\Controllers\backend\ProfileController;
+use App\Http\Controllers\backend\UserResponseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -121,6 +122,12 @@ Route::group(['middleware' => ['auth'], 'prefix' => '/admin', 'as' => 'admin.'],
     Route::group(['prefix' => '/profile', 'as' => 'profile.'], function() {
         Route::get('/', [ProfileController::class, 'index'])->name('index');
         Route::post('/update', [ProfileController::class, 'update'])->name('update');
+    });
+
+    Route::group(['prefix' => '/user-response', 'as' => 'userResponse.'], function() {
+        Route::get('/', [UserResponseController::class, 'index'])->name('index');
+        Route::post('/store', [UserResponseController::class, 'store'])->name('store');
+        Route::get('/delete/{id}', [UserResponseController::class, 'delete'])->name('delete');
     });
 
 });

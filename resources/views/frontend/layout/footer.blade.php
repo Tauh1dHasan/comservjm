@@ -93,14 +93,15 @@
                 <div class="modal-titleblock">
                     <div class="modal-title">Make an Appointment</div>
                 </div>
-                <form class="form-modal" id="jsFormMakeAppointment" method="post" novalidate="novalidate" action="#">
+                <form class="form-modal" method="post" action="{{route('admin.userResponse.store')}}">
+                    @csrf
                     <div class="form-group">
-                        <input type="text" name="name" class="form-control" id="modalName01" placeholder="Your Name *">
+                        <input type="text" name="name" class="form-control" id="modalName01" placeholder="Your Name *" required>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input type="text" name="email" class="form-control" id="modalEmail01" placeholder="Your e-mail address *">
+                                <input type="email" name="email" class="form-control" id="modalEmail01" placeholder="Your e-mail address ">
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -110,28 +111,17 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="modalAddress" class="form-control" id="modalAddress" placeholder="Address *">
+                        <input type="text" name="address" class="form-control" id="address" placeholder="Address">
                     </div>
                     <div class="form-group">
-                        <div class="custom-select">
-                            <select name="typeofholiday" class="tt-select">
-                                <option value="Service">Service</option>
-                                <option value="Service 02">Service 02</option>
-                                <option value="Service 03">Service 03</option>
-                                <option value="Service 04">Service 04</option>
-                                <option value="Service 05">Service 05</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <input name="date" placeholder="Date of visit" autocomplete="off" data-timepicker="true" class="js_datepicker-1 form-control" type="text">
+                        <input name="select_date" placeholder="Date of visit" autocomplete="off" data-timepicker="true" class="js_datepicker-1 form-control" type="text">
                         <div class="form-group__icon icon-747993"></div>
                     </div>
                     <div class="form-group">
-                        <textarea name="message" class="form-control" placeholder="Your comment"></textarea>
+                        <textarea name="comment" class="form-control" placeholder="Your comment"></textarea>
                     </div>
                     <button type="submit" class="tt-btn btn__color01">
-                        <span class="icon-lightning"></span>Explore services
+                        <span class="icon-lightning"></span>Submit
                     </button>
                 </form>
             </div>
