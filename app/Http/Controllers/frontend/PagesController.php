@@ -20,6 +20,7 @@ use App\Models\Setting;
 use App\Models\ShopCategory;
 use App\Models\Product;
 use App\Models\Service;
+use App\Models\ServiceCategory;
 
 class PagesController extends Controller
 {
@@ -34,10 +35,11 @@ class PagesController extends Controller
         $offer = HomeOffer::where('id', 1)->first();
         $statistic = HomeStatistic::where('id', 1)->first();
         $testimonials = HomeTestimonial::all();
+        $services = Service::orderBy('id', 'DESC')->take(8)->get();
         $galleryImages = Gallery::orderBy('id', 'DESC')->take(10)->where('id', '!=', 1)->get();
 
         return view('frontend.pages.home', compact(
-            'mainSliders', 'aboutUs', 'highlights', 'offer', 'statistic', 'testimonials', 'galleryImages'
+            'mainSliders', 'aboutUs', 'highlights', 'offer', 'statistic', 'testimonials', 'galleryImages', 'services'
         ));
     }
 
@@ -56,7 +58,19 @@ class PagesController extends Controller
     // Services page method
     public function services()
     {
-        return view('frontend.pages.services');
+        $serviceCats = ServiceCategory::all();
+        $services = Service::orderBy('id', 'DESC')->get();
+
+        return view('frontend.pages.services', compact('serviceCats', 'services'));
+    }
+
+    // Category wise service list
+    public function serviceCategory($id)
+    {   
+        $serviceCats = ServiceCategory::all();
+        $services = Service::where('service_category_id', $id)->get();
+
+        return view('frontend.pages.serviceCategory', compact('serviceCats', 'services'));
     }
 
     // Service-Item page method
@@ -64,8 +78,9 @@ class PagesController extends Controller
     {
         $allServices = Service::with('serviceCategory')->get();
         $service = Service::with('serviceCategory')->where('id', $id)->first();
+        $setting = Setting::where('id', 1)->first();
 
-        return view('frontend.pages.serviceItem', compact('allServices', 'service'));
+        return view('frontend.pages.serviceItem', compact('allServices', 'service', 'setting'));
     }
 
     // Gallery page method

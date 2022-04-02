@@ -93,6 +93,7 @@
                         <!-- ============================================================== -->
                         <li class="nav-item">
                             <form action="{{route('logout')}}" method="post">
+                                @csrf
                                 {{-- <button class="ti-power-off" type="button" style="color:red;"></button> --}}
                                 <input class="btn btn-danger"  type="submit" value="logout">
                             </form>

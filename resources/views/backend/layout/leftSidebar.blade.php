@@ -115,9 +115,14 @@
                                 <span class="hide-menu">All responses</span>
                             </a>
                         </li>
-                        {{-- /Visitor responses --}}
+
+                        <li class="nav-small-cap">
+                            <i class="mdi mdi-dots-horizontal"></i>
+                            <span class="hide-menu">Profile</span>
+                        </li>
+
                         <li class="sidebar-item">
-                            <a href="index.html" class="sidebar-link">
+                            <a href="{{route('admin.profile.index')}}" class="sidebar-link">
                                 <i class="fa fa-user"></i>
                                 <span class="hide-menu">Profile</span>
                             </a>

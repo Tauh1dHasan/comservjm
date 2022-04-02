@@ -88,8 +88,8 @@
             <div class="section-indent">
                 <div class="container container-lg-fluid container__p-r">
                     <div class="section-title max-width-01 section-title_indent-02">
-                        <div class="section-title__01">24/7 Electrician Services – Safe and Efficient</div>
-                        <div class="section-title__02">We are a Full Service Electrical Contractor</div>
+                        <div class="section-title__01">Our Services</div>
+                        <div class="section-title__02">Some of our Services</div>
                     </div>
                     <div class="tt-box02_wrapper row slick-type01 slick-slider slick-dotted" data-slick='{
                         "slidesToShow": 3,
@@ -111,119 +111,26 @@
                             }
                         ]
                     }'>
-                        <div class="col-md-4">
-                            <div class="tt-box02">
-                                <a href="services-item.html" class="tt-box02__img">
-                                    <div class="tt-bg-dark">
-                                        <img data-src="{{asset('images/box02-img01.jpg')}}" class="tt-img-main lazyload" alt="">
-                                    </div>
-                                </a>
-                                <h6 class="tt-box02__title">
-                                    <a href="#">Electrical Service</a>
-                                </h6>
-                                <p>We provide complete electrical design and installation services.</p>
-                                <div class="tt-row-btn">
-                                    <a href="services-item.html" class="tt-link">More info
-                                        <span class="icon-arrowhead-pointing-to-the-right-1"></span>
+                        @foreach ($services as $service)
+                            <div class="col-md-4">
+                                <div class="tt-box02">
+                                    <a href="{{ route('frontend.serviceItem', $service->id) }}" class="tt-box02__img">
+                                        <div class="tt-bg-dark">
+                                            <img data-src="{{asset('images/service/'.$service->header_image)}}" class="tt-img-main lazyload">
+                                        </div>
                                     </a>
+                                    <h6 class="tt-box02__title">
+                                        <a href="{{route('frontend.serviceItem', $service->id)}}">{{$service->name}}</a>
+                                    </h6>
+                                    <p>{{ Str::substr($service->short_description, 0, 50) }}</p>
+                                    <div class="tt-row-btn">
+                                        <a href="{{ route('frontend.serviceItem', $service->id) }}" class="tt-link">More info
+                                            <span class="icon-arrowhead-pointing-to-the-right-1"></span>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="tt-box02">
-                                <a href="services-item.html" class="tt-box02__img">
-                                    <div class="tt-bg-dark">
-                                        <img data-src="{{asset('images/box02-img02.jpg')}}" class="tt-img-main lazyload" alt="">
-                                    </div>
-                                </a>
-                                <h6 class="tt-box02__title">
-                                    <a href="#">Heating Service</a>
-                                </h6>
-                                <p>We offer energy efficient electric heat products and installations.</p>
-                                <div class="tt-row-btn">
-                                    <a href="services-item.html" class="tt-link">More info
-                                        <span class="icon-arrowhead-pointing-to-the-right-1"></span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="tt-box02">
-                                <a href="services-item.html" class="tt-box02__img">
-                                    <div class="tt-bg-dark">
-                                        <img data-src="{{asset('images/box02-img03.jpg')}}" class="tt-img-main lazyload" alt="">
-                                    </div>
-                                </a>
-                                <h6 class="tt-box02__title">
-                                    <a href="#">Air Conditioning</a>
-                                </h6>
-                                <p>Our installation services ensure that you get the right air conditioner.</p>
-                                <div class="tt-row-btn">
-                                    <a href="services-item.html" class="tt-link">More info
-                                        <span class="icon-arrowhead-pointing-to-the-right-1"></span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="tt-box02">
-                                <a href="services-item.html" class="tt-box02__img">
-                                    <div class="tt-bg-dark">
-                                        <img data-src="{{asset('images/box02-img04.jpg')}}" class="tt-img-main lazyload" alt="">
-                                    </div>
-                                </a>
-                                <h6 class="tt-box02__title">
-                                    <a href="#">Security Systems</a>
-                                </h6>
-                                <p>You can view events over a monitor in our home.</p>
-                                <div class="tt-row-btn">
-                                    <a href="services-item.html" class="tt-link">More info
-                                        <span class="icon-arrowhead-pointing-to-the-right-1"></span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="tt-box02">
-                                <a href="services-item.html" class="tt-box02__img">
-                                    <div class="tt-bg-dark">
-                                        <img data-src="{{asset('images/box02-img05.jpg')}}" class="tt-img-main lazyload" alt="">
-                                    </div>
-                                </a>
-                                <h6 class="tt-box02__title">
-                                    <a href="#">Panels Changes</a>
-                                </h6>
-                                <p>Electrical panels are the heart of your electrical system.</p>
-                                <div class="tt-row-btn">
-                                    <a href="services-item.html" class="tt-link">More info
-                                        <span class="icon-arrowhead-pointing-to-the-right-1"></span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="tt-box02">
-                                <a href="services-item.html" class="tt-box02__img">
-                                    <div class="tt-bg-dark">
-                                        <img data-src="{{asset('images/box02-img06.jpg')}}" class="tt-img-main lazyload" alt="">
-                                    </div>
-                                </a>
-                                <h6 class="tt-box02__title">
-                                    <a href="#">Trouble Shooting</a>
-                                </h6>
-                                <p>We think before we start working to save you money.</p>
-                                <div class="tt-row-btn">
-                                    <a href="services-item.html" class="tt-link">More info
-                                        <span class="icon-arrowhead-pointing-to-the-right-1"></span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
 
                     </div>
                 </div>

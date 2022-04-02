@@ -124,6 +124,7 @@
                                             </div>
                                         </a>
                                     </li>
+                                    
                                     <li>
                                         <a href="{{route('frontend.services')}}">
                                             <div class="electric-btn"><span class="text">Services</span>
@@ -136,12 +137,18 @@
                                             </div>
                                         </a>
                                         <ul>
-                                            <li>
-                                                <a href="">Sub menu level 01</a>
-                                                <ul>
-                                                    <li><a href="{{route('frontend.serviceItem',1)}}">Sub menu level 02</a></li>
-                                                </ul>
-                                            </li>
+                                            @foreach ($serviceCat as $category)
+                                                <li>
+                                                    <a href="{{ route('frontend.serviceCategory', $category->id) }}">{{ $category->name }}</a>
+                                                    <ul style="width: 300px;">
+                                                        @foreach ($category->services as $service)
+                                                            <li style="width: 300px;">
+                                                                <a href="{{route('frontend.serviceItem', $service->id)}}">{{ $service->name }}</a>
+                                                            </li>    
+                                                        @endforeach
+                                                    </ul>
+                                                </li>
+                                            @endforeach
                                         </ul>
                                     </li>
                                     

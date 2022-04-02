@@ -10,6 +10,7 @@ use App\Http\Controllers\backend\SettingController;
 use App\Http\Controllers\backend\ShopController;
 use App\Http\Controllers\backend\ProductController;
 use App\Http\Controllers\backend\ServiceController;
+use App\Http\Controllers\backend\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,7 @@ Route::group(['prefix' => '/', 'as' => 'frontend.'], function() {
     Route::get('/', [PagesController::class, 'home'])->name('home');
     Route::get('aboutus', [PagesController::class, 'about'])->name('about');
     Route::get('services', [PagesController::class, 'services'])->name('services');
+    Route::get('service-category/{id}', [PagesController::class, 'serviceCategory'])->name('serviceCategory');
     Route::get('service-item/{id}', [PagesController::class, 'serviceItem'])->name('serviceItem');
     Route::get('gallery', [PagesController::class, 'gallery'])->name('gallery');
     Route::get('shop', [PagesController::class, 'shop'])->name('shop');
@@ -114,6 +116,11 @@ Route::group(['middleware' => ['auth'], 'prefix' => '/admin', 'as' => 'admin.'],
         Route::get('/categories', [ServiceController::class, 'categories'])->name('categories');
         Route::post('/addCategory', [ServiceController::class, 'addCategory'])->name('addCategory');
         Route::post('/deleteCategory/{id}', [ServiceController::class, 'deleteCategory'])->name('deleteCategory');
+    });
+
+    Route::group(['prefix' => '/profile', 'as' => 'profile.'], function() {
+        Route::get('/', [ProfileController::class, 'index'])->name('index');
+        Route::post('/update', [ProfileController::class, 'update'])->name('update');
     });
 
 });

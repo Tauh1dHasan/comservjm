@@ -23,10 +23,10 @@
                                     <div class="tt-col-img__top">
                                         <div class="row tt-col-img">
                                             <div class="col-sm-6">
-                                                <img src="{{asset('images/services_img02.jpg')}}" alt="">
+                                                <img src="{{asset('images/service/'.$service->image1)}}">
                                             </div>
                                             <div class="col-sm-6">
-                                                <img src="{{asset('images/services_img03.jpg')}}" alt="">
+                                                <img src="{{asset('images/service/'.$service->image2)}}">
                                             </div>
                                         </div>
                                     </div>
@@ -44,59 +44,26 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="divider d-block d-block d-md-none"></div>
                         <div class="col-12 col-md-4 col-lg-4 asideColumn asideColumn-left">
                             <div class="tt-block-aside">
                                 <div class="tt-aside-content">
                                     <div class="submenu-aside js-accordeon">
-                                        <div class="tt-item tt-item__open">
-                                            <div class="tt-item__title">Commercial</div>
-                                            <div class="tt-item__content">
-                                                <ul>
-                                                    <li><a href="#">Electrical Repairs</a></li>
-                                                    <li><a href="#">Panel Upgrades</a></li>
-                                                    <li><a href="#">Lighting Upgrades</a></li>
-                                                    <li><a href="#">Surge Protection</a></li>
-                                                    <li><a href="#">Generator Repair</a></li>
-                                                    <li><a href="#">Install a Ceiling Fan</a></li>
-                                                    <li><a href="#">Outdoor and Motion Lighting</a></li>
-                                                    <li><a href="#">Digital Thermostat Installation</a></li>
-                                                    <li><a href="#">Baseboard Heating Installation</a></li>
-                                                </ul>
+                                        @foreach ($serviceCat as $category)
+                                            <div class="tt-item">
+                                                <div class="tt-item__title">{{ $category->name }}</div>
+                                                <div class="tt-item__content">
+                                                    <ul>
+                                                        @foreach ($category->services as $service)
+                                                            <li>
+                                                                <a href="{{route('frontend.serviceItem', $service->id)}}">{{$service->name}}</a>
+                                                            </li>    
+                                                        @endforeach
+                                                    </ul>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="tt-item">
-                                            <div class="tt-item__title">Industrial</div>
-                                            <div class="tt-item__content">
-                                                <ul>
-                                                    <li><a href="#">Electrical Repairs</a></li>
-                                                    <li><a href="#">Panel Upgrades</a></li>
-                                                    <li><a href="#">Lighting Upgrades</a></li>
-                                                    <li><a href="#">Surge Protection</a></li>
-                                                    <li><a href="#">Generator Repair</a></li>
-                                                    <li><a href="#">Install a Ceiling Fan</a></li>
-                                                    <li><a href="#">Outdoor and Motion Lighting</a></li>
-                                                    <li><a href="#">Digital Thermostat Installation</a></li>
-                                                    <li><a href="#">Baseboard Heating Installation</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="tt-item">
-                                            <div class="tt-item__title">Residential</div>
-                                            <div class="tt-item__content">
-                                                <ul>
-                                                    <li><a href="#">Electrical Repairs</a></li>
-                                                    <li><a href="#">Panel Upgrades</a></li>
-                                                    <li><a href="#">Lighting Upgrades</a></li>
-                                                    <li><a href="#">Surge Protection</a></li>
-                                                    <li><a href="#">Generator Repair</a></li>
-                                                    <li><a href="#">Install a Ceiling Fan</a></li>
-                                                    <li><a href="#">Outdoor and Motion Lighting</a></li>
-                                                    <li><a href="#">Digital Thermostat Installation</a></li>
-                                                    <li><a href="#">Baseboard Heating Installation</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
+                                        @endforeach
                                     </div>
                                 </div>
                             </div>
@@ -104,10 +71,20 @@
                                 <h3 class="tt-aside-title">Our Contacts</h3>
                                 <div class="tt-aside-content">
                                     <ul class="box-aside-info">
-                                        <li><i class="icon-map-marker"></i> 8494 Signal Hill Road Manassas, VA, 20110</li>
-                                        <li><i class="icon-clock-circular-outline-1"></i> Mon-Fri 08:00 AM - 05:00 PM</li>
-                                        <li><a href="tel:1(800)7654321"><i class="icon-telephone"></i> 1 (800) 765-43-21</a></li>
-                                    </ul><a href="#" data-toggle="modal" data-target="#modalMakeAppointment" class="tt-btn btn__color01"><span class="icon-lightning"></span>Make an Appointent</a></div>
+                                        <li>
+                                            <i class="icon-map-marker"></i> {{$setting->address}}
+                                        </li>
+                                        <li>
+                                            <i class="icon-clock-circular-outline-1"></i> {{$setting->workhours}}
+                                        </li>
+                                        <li>
+                                            <a href="tel:{{$setting->phone1}}"><i class="icon-telephone"></i> {{$setting->phone1}}</a>
+                                        </li>
+                                        <li>
+                                            <a href="tel:{{$setting->phone2}}"><i class="icon-telephone"></i> {{$setting->phone2}}</a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -3,8 +3,9 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use App\Models\Setting;
 use Illuminate\Pagination\Paginator;
+use App\Models\Setting;
+use App\Models\ServiceCategory;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -28,5 +29,8 @@ class AppServiceProvider extends ServiceProvider
         Paginator::useBootstrap();
         $setting = Setting::where('id', 1)->first();
         view()->share('setting', $setting);
+
+        $serviceCat = ServiceCategory::with('services')->get();
+        view()->share('serviceCat', $serviceCat);
     }
 }
