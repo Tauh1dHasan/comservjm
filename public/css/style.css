@@ -7673,8 +7673,8 @@ input[type=text] {
 
 ul {
     list-style: none;
-    margin: 0;
-    padding: 0
+    /* margin: 0;
+    padding: 0 */
 }
 
 p {
@@ -18836,4 +18836,8 @@ form {
 
 .active {
     color: #f47629 !important;
+}
+
+.ck>ul {
+    list-style-type: disc;
 }

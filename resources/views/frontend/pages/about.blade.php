@@ -17,8 +17,9 @@
                                     <div class="section-title__01">Experience</div>
                                     <div class="section-title__02">{{$experience->title}}</div>
                                 </div>
-                                {!! $experience->description !!}
-                                
+                                <div class="ck">
+                                    {!! $experience->description !!}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -34,7 +35,10 @@
                                     <div class="section-title__01">Certificates</div>
                                     <div class="section-title__02">{{$certificate->title}}</div>
                                 </div>
-                                {!! $certificate->description !!}
+                                <div class="ck">
+
+                                    {!! $certificate->description !!}
+                                </div>
                                 <ul class="js-wrapper-gallery gallery01 gallery01-top">
                                     <li>
                                         <a style="max-width:200px;" class="tt-gallery" href="{{asset('images/'.$certificate->certificateOne)}}">

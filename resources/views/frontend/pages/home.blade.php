@@ -80,7 +80,10 @@
                                     <div class="section-title__01">About Us</div>
                                     <div class="section-title__02">{{$aboutUs->title}}</div>
                                 </div>
-                                {!! $aboutUs->description !!}
+                                <div class="ck">
+                                    {!! $aboutUs->description !!}
+                                </div>
+                                
                             </div>
                         </div>
                     </div>
@@ -163,7 +166,10 @@
                                 <h4 class="tt-box01__title">
                                     {{$offer->title}}
                                 </h4>
-                                {!! $offer->description !!}
+                                <div class="ck">
+
+                                    {!! $offer->description !!}
+                                </div>
                                 <div class="tt-row-btn">
                                     <a class="tt-btn btn__color01" href="tel:{{$offer->phone_number}}">
                                         <span class="icon-telephone"></span>Give Us a Call

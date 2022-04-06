@@ -98,7 +98,7 @@
                                             
                                             <div class="form-group">
                                                 <label>About us Description</label>
-                                                <textarea class="form-control" name="description" id="description" rows="5" required>{{$aboutUs->description}}</textarea>
+                                                <textarea class="form-control ckeditor" name="description" id="description" rows="5" required>{{$aboutUs->description}}</textarea>
                                                 <script>
                                                     CKEDITOR.replace('description');
                                                 </script>

@@ -18,7 +18,10 @@
                                         </div>
                                         <blockquote class="blockquote01 blockquote01__max-width01">{{$service->short_description}}</blockquote>
                                     </div>
-                                    {!! $service->long_description !!}
+                                    <div class="ck">
+
+                                        {!! $service->long_description !!}
+                                    </div>
                                     
                                     <div class="tt-col-img__top">
                                         <div class="row tt-col-img">
